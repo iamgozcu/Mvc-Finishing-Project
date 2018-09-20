@@ -1,0 +1,174 @@
+﻿
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/admin/Views/Shared/_adminLayoutPage.cshtml";
+}
+@section css{
+    <link type="text/css" href="~/Areas/admin/Content/assets/css/optional/switchery.min.css" rel="stylesheet" />
+    <link type="text/css" href="~/Areas/admin/Content/assets/css/optional/powerange.min.css" rel="stylesheet" />
+    <link type="text/css" href="~/Areas/admin/Content/assets/css/optional/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+    <link type="text/css" href="~/Areas/admin/Content/assets/css/optional/bootstrap-tagsinput.min.css" rel="stylesheet" />
+    <link type="text/css" href="~/Areas/admin/Content/assets/css/optional/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link type="text/css" href="~/Areas/admin/Content/assets/css/optional/bootstrap-multiselect.min.css" rel="stylesheet" />
+    <link type="text/css" href="~/Areas/admin/Content/assets/css/demo-files/form-extras.css" rel="stylesheet" />
+}
+<div class="row">
+    <div class="col-xs-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href='@Url.Action("Index", "Home", null, Request.Url.Scheme)'>Anasayfa</a>
+            </li>
+            <li class="active">
+                <a href='@Url.Action("Detail", "Customer", null, Request.Url.Scheme)'>Müşteri Detay</a>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h1>
+            <span aria-hidden="true" class="icon icon-star"></span>
+            <span class="main-text">
+                Müşteri Detay
+            </span>
+        </h1>
+    </div>
+    <div class="col-md-6">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="block">
+
+            <div class="block-content-outer">
+                <div class="block-content-inner">
+                    <ul id="default-tabs" class="nav nav-tabs">
+                        <li class="active"><a href="#default-tabs-home" data-toggle="tab">Genel</a></li>
+                        <li><a href="#default-tabs-profile" data-toggle="tab">Adresler <span class="badge badge-success">4</span></a></li>
+                        <li><a href="#default-tabs-messages" data-toggle="tab">Bayinin Siparişleri <span class="badge badge-success">10</span></a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="default-tabs-home" class="tab-pane active">
+
+                           @{Html.RenderAction("CustomerDetailEditPartial", "Customer"); }
+
+                        </div>
+                        <div id="default-tabs-profile" class="tab-pane">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="block">
+
+                                        <div class="block-content-outer">
+                                            <div class="block-content-inner">
+                                                <div class="table-responsive">
+                                                    <a class="btn btn-success rounded" href="#">Adres Ekle</a>
+                                                    <br />
+                                                    <br />
+                                                    <table id="datatable-1" class="table table-striped table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Adı</th>
+                                                                <th>Soyadı</th>
+                                                                <th>Adres Adı</th>
+                                                                <th>Düzenle</th>
+                                                                <th>Sil</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>deneme</td>
+                                                                <td>deneme</td>
+                                                                <td>deneme</td>
+                                                                <td>
+                                                                    @*<a class="glyphicon glyphicon-edit" href="@Url.Action("Detail", "Customer", new { id = item.CustomerId })"></a>*@
+                                                                    <a class="glyphicon glyphicon-edit" href="#"></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a class="glyphicon glyphicon-trash delete-row" data-toggle="modal"
+                                                                       data-target="#default-modal"></a>
+                                                                </td>
+                                                                
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="default-tabs-messages" class="tab-pane">
+                            <div id="default-tabs-profile" class="tab-pane">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="block">
+
+                                            <div class="block-content-outer">
+                                                <div class="block-content-inner">
+                                                    <div class="table-responsive">
+                                                        <table id="datatable-1" class="table table-striped table-hover">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Sipariş No</th>
+                                                                    <th>Şirket</th>
+                                                                    <th>Ad Soyad</th>
+                                                                    <th>Tarih</th>
+                                                                    <th>Ödeme</th>
+                                                                    <th>Tutar</th>
+                                                                    <th>Adet</th>
+                                                                    <th>Durum</th>
+                                                                    <th>Düzenle</th>
+                                                                    <th>Sil</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>deneme</td>
+                                                                    <td>deneme</td>
+                                                                    <td>deneme</td>
+                                                                    <td>deneme</td>
+                                                                    <td>deneme</td>
+                                                                    <td>deneme</td>
+                                                                    <td>deneme</td>
+                                                                    <td>deneme</td>
+                                                                    <td>
+                                                                        <a class="glyphicon glyphicon-edit" href="#"></a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a class="glyphicon glyphicon-trash delete-row" data-toggle="modal"
+                                                                           data-target="#default-modal"></a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/jquery.mask.min.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/switchery.min.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/powerange.min.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/jquery.bootstrap-touchspin.min.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/bootstrap-tagsinput.min.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/misc/typeahead.bundle.min.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/misc/moment.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/bootstrap-multiselect.min.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/ckeditor/adapters/jquery.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/demo-files/form-extras.js"></script>
+}

@@ -1,0 +1,18 @@
+﻿@model List<_00_DataAccessLayer.Entity.Setting>
+
+@foreach (var item in Model)
+{
+    <p>
+       <strong>@item.CompanyName</strong><br>
+        @item.Address<br>
+       <i class="fa fa-phone"></i> @item.Phone <br>
+       <i class="fa fa-phone"></i> @item.GSM <br>
+       <i class="fa fa-envelope"></i> @item.ContactMailAddress
+    </p>
+    <ul class="social-icons triangled">
+        <li><a href="@item.Facebook" class="fa fa-facebook"></a></li>
+        <li><a href="@item.Twitter" class="fa fa-twitter"></a></li>
+        <li><a href="@item.Instagram" class="fa fa-instagram"></a></li>
+        <li><a href="@item.Linkedin" class="fa fa-linkedin"></a></li>
+    </ul>
+}

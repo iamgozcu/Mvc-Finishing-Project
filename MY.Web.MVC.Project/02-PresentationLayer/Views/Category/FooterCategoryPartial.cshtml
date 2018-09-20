@@ -1,0 +1,29 @@
+﻿@model List<_00_DataAccessLayer.ViewModel.CategoryFooterListModel>
+
+@foreach (var item in Model)
+{
+<div class="col-xs-12 col-sm-6 col-md-3">
+    <div class="footer-column">
+      
+            <h2>
+                <span class="icon-holder">
+                    <i class="fa  fa-check"></i>
+                    <span class="triangle"></span>
+                </span>
+
+                @item.Category.CategoryName
+            </h2>
+        
+
+            <ul class="footer-links-holder">
+                @foreach (var subcat in item.SubCategories)
+                {
+                    <li><a href="@Url.Action("Index", "ProductGrid", new { ProductGridSeoUrl = subcat.ProductGridSeoUrl})">@subcat.CategoryName</a></li>
+                }
+                
+            </ul>
+
+     
+    </div>
+</div>
+}

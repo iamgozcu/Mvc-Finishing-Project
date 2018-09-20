@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MYProjectDBModelStoreContainer" CdmEntityContainer="MYProjectDBEntities">
+    <EntitySetMapping Name="Administrators">
+      <EntityTypeMapping TypeName="MYProjectDBModel.Administrator">
+        <MappingFragment StoreEntitySet="Administrators">
+          <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EmailAdress" ColumnName="EmailAdress" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Banks">
+      <EntityTypeMapping TypeName="MYProjectDBModel.Bank">
+        <MappingFragment StoreEntitySet="Banks">
+          <ScalarProperty Name="BankId" ColumnName="BankId" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="BankImage" ColumnName="BankImage" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="AccountOwner" ColumnName="AccountOwner" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+          <ScalarProperty Name="IbanNo" ColumnName="IbanNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Baskets">
+      <EntityTypeMapping TypeName="MYProjectDBModel.Basket">
+        <MappingFragment StoreEntitySet="Baskets">
+          <ScalarProperty Name="BasketId" ColumnName="BasketId" />
+          <ScalarProperty Name="BasketDealerId" ColumnName="BasketDealerId" />
+          <ScalarProperty Name="BasketProductd" ColumnName="BasketProductd" />
+          <ScalarProperty Name="BasketPiece" ColumnName="BasketPiece" />
+          <ScalarProperty Name="BasketAmount" ColumnName="BasketAmount" />
+          <ScalarProperty Name="BasketShortDscription" ColumnName="BasketShortDscription" />
+          <ScalarProperty Name="BasketCargo" ColumnName="BasketCargo" />
+          <ScalarProperty Name="BasketProductDate" ColumnName="BasketProductDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Brands">
+      <EntityTypeMapping TypeName="MYProjectDBModel.Brand">
+        <MappingFragment StoreEntitySet="Brands">
+          <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+          <ScalarProperty Name="BrandImage" ColumnName="BrandImage" />
+          <ScalarProperty Name="ActivePassive" ColumnName="ActivePassive" />
+          <ScalarProperty Name="Sorting" ColumnName="Sorting" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Busines">
+      <EntityTypeMapping TypeName="MYProjectDBModel.Busine">
+        <MappingFragment StoreEntitySet="Busines">
+          <ScalarProperty Name="BusinessId" ColumnName="BusinessId" />
+          <ScalarProperty Name="BusinessName" ColumnName="BusinessName" />
+          <ScalarProperty Name="BusinessAdres1" ColumnName="BusinessAdres1" />
+          <ScalarProperty Name="BusinessAdres2" ColumnName="BusinessAdres2" />
+          <ScalarProperty Name="BusinessAdres3" ColumnName="BusinessAdres3" />
+          <ScalarProperty Name="BusinessPostCode" ColumnName="BusinessPostCode" />
+          <ScalarProperty Name="BusinessTelNo" ColumnName="BusinessTelNo" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="EmailAdres" ColumnName="EmailAdres" />
+          <ScalarProperty Name="Passwords" ColumnName="Passwords" />
+          <ScalarProperty Name="CompanyNumber" ColumnName="CompanyNumber" />
+          <ScalarProperty Name="VatNumber" ColumnName="VatNumber" />
+          <ScalarProperty Name="PrimaryContact" ColumnName="PrimaryContact" />
+          <ScalarProperty Name="SecondaryContact" ColumnName="SecondaryContact" />
+          <ScalarProperty Name="BusinesType" ColumnName="BusinesType" />
+          <ScalarProperty Name="Other" ColumnName="Other" />
+          <ScalarProperty Name="Tobacconist" ColumnName="Tobacconist" />
+          <ScalarProperty Name="AreYou18" ColumnName="AreYou18" />
+          <ScalarProperty Name="Depot" ColumnName="Depot" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="BankAdres1" ColumnName="BankAdres1" />
+          <ScalarProperty Name="BankAdres2" ColumnName="BankAdres2" />
+          <ScalarProperty Name="BankAdres3" ColumnName="BankAdres3" />
+          <ScalarProperty Name="BankPostCode" ColumnName="BankPostCode" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="Requirements" ColumnName="Requirements" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CargoDetails">
+      <EntityTypeMapping TypeName="MYProjectDBModel.CargoDetail">
+        <MappingFragment StoreEntitySet="CargoDetails">
+          <ScalarProperty Name="CargoDesiId" ColumnName="CargoDesiId" />
+          <ScalarProperty Name="CargoParentId" ColumnName="CargoParentId" />
+          <ScalarProperty Name="CargoDesiValue" ColumnName="CargoDesiValue" />
+          <ScalarProperty Name="CargoDesiPrice" ColumnName="CargoDesiPrice" />
+          <ScalarProperty Name="CargoDesiCityId" ColumnName="CargoDesiCityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cargos">
+      <EntityTypeMapping TypeName="MYProjectDBModel.Cargo">
+        <MappingFragment StoreEntitySet="Cargos">
+          <ScalarProperty Name="CargoId" ColumnName="CargoId" />
+          <ScalarProperty Name="CargoName" ColumnName="CargoName" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CargoImage" ColumnName="CargoImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CargoTrackings">
+      <EntityTypeMapping TypeName="MYProjectDBModel.CargoTracking">
+        <MappingFragment StoreEntitySet="CargoTrackings">
+          <ScalarProperty Name="CargoTrackingId" ColumnName="CargoTrackingId" />
+          <ScalarProperty Name="CargoTrackingNumber" ColumnName="CargoTrackingNumber" />
+          <ScalarProperty Name="CargoTrackingLink" ColumnName="CargoTrackingLink" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="OrderDetailId" ColumnName="OrderDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="MYProjectDBModel.Category">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="SubCategoryId" ColumnName="SubCategoryId" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CategoryHit" ColumnName="CategoryHit" />
+          <ScalarProperty Name="CategoryImage" ColumnName="CategoryImage" />
+          <ScalarProperty Name="CategoryTitle" ColumnName="CategoryTitle" />
+          <ScalarProperty Name="CategoryDesc" ColumnName="CategoryDesc" />
+          <ScalarProperty Name="CategoryKeyw" ColumnName="CategoryKeyw" />
+          <ScalarProperty Name="CategoryBanner" ColumnName="CategoryBanner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="MYProjectDBModel.Company">
+        <MappingFragment StoreEntitySet="Companies">
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="CompanySeo" ColumnName="CompanySeo" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanySurname" ColumnName="CompanySurname" />
+          <ScalarProperty Name="CompanyTitle" ColumnName="CompanyTitle" />
+          <ScalarProperty Name="CompanyPassword" ColumnName="CompanyPassword" />
+          <ScalarProperty Name="CompanyImage" ColumnName="CompanyImage" />
+          <ScalarProperty Name="CompanyDescription" ColumnName="CompanyDescription" />
+          <ScalarProperty Name="CompanyFacebook" ColumnName="CompanyFacebook" />
+          <ScalarProperty Name="CompanyTwitter" ColumnName="CompanyTwitter" />
+          <ScalarProperty Name="CompanyGoogle" ColumnName="CompanyGoogle" />
+          <ScalarProperty Name="CompanyCountry" ColumnName="CompanyCountry" />
+          <ScalarProperty Name="CompanyCity" ColumnName="CompanyCity" />
+          <ScalarProperty Name="CompanyCounty" ColumnName="CompanyCounty" />
+          <ScalarProperty Name="CompanyDistrict" ColumnName="CompanyDistrict" />
+          <ScalarProperty Name="CompanyStreet" ColumnName="CompanyStreet" />
+          <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+          <ScalarProperty Name="CompanyNumber" ColumnName="CompanyNumber" />
+          <ScalarProperty Name="CompanyPhone" ColumnName="CompanyPhone" />
+          <ScalarProperty Name="CompanyGsm" ColumnName="CompanyGsm" />
+          <ScalarProperty Name="CompanyEmail" ColumnName="CompanyEmail" />
+          <ScalarProperty Name="CompanyWeb" ColumnName="CompanyWeb" />
+          <ScalarProperty Name="CompanyMap" ColumnName="CompanyMap" />
+          <ScalarProperty Name="CompanyActive" ColumnName="CompanyActive" />
+          <ScalarProperty Name="CompanyHit" ColumnName="CompanyHit" />
+          <ScalarProperty Name="CompanyPaid" ColumnName="CompanyPaid" />
+          <ScalarProperty Name="CompanyRegistration" ColumnName="CompanyRegistration" />
+          <ScalarProperty Name="CompanySector" ColumnName="CompanySector" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContentPages">
+      <EntityTypeMapping TypeName="MYProjectDBModel.ContentPage">
+        <MappingFragment StoreEntitySet="ContentPages">
+          <ScalarProperty Name="PageId" ColumnName="PageId" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="PageContent" ColumnName="PageContent" />
+          <ScalarProperty Name="PageImage" ColumnName="PageImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerDetails">
+      <EntityTypeMapping TypeName="MYProjectDBModel.CustomerDetail">
+        <MappingFragment StoreEntitySet="CustomerDetails">
+          <ScalarProperty Name="CustomerDetailId" ColumnName="CustomerDetailId" />
+          <ScalarProperty Name="CustomerDetailName" ColumnName="CustomerDetailName" />
+          <ScalarProperty Name="CustomerDetailSurname" ColumnName="CustomerDetailSurname" />
+          <ScalarProperty Name="EmailAdress" ColumnName="EmailAdress" />
+          <ScalarProperty Name="AddressName" ColumnName="AddressName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="TaxAdministration" ColumnName="TaxAdministration" />
+          <ScalarProperty Name="TaxNumber" ColumnName="TaxNumber" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="GSM" ColumnName="GSM" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="MYProjectDBModel.Customer">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerSurname" ColumnName="CustomerSurname" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="MembershipDate" ColumnName="MembershipDate" />
+          <ScalarProperty Name="ActivePassive" ColumnName="ActivePassive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FilterDetails">
+      <EntityTypeMapping TypeName="MYProjectDBModel.FilterDetail">
+        <MappingFragment StoreEntitySet="FilterDetails">
+          <ScalarProperty Name="FilterDetailId" ColumnName="FilterDetailId" />
+          <ScalarProperty Name="FilterDetailTitle" ColumnName="FilterDetailTitle" />
+          <ScalarProperty Name="FilterId" ColumnName="FilterId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FilterProducts">
+      <EntityTypeMapping TypeName="MYProjectDBModel.FilterProduct">
+        <MappingFragment StoreEntitySet="FilterProducts">
+          <ScalarProperty Name="FilterProductId" ColumnName="FilterProductId" />
+          <ScalarProperty Name="FilterDetailId" ColumnName="FilterDetailId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Filters">
+      <EntityTypeMapping TypeName="MYProjectDBModel.Filter">
+        <MappingFragment StoreEntitySet="Filters">
+          <ScalarProperty Name="FilterId" ColumnName="FilterId" />
+          <ScalarProperty Name="FilterTitle" ColumnName="FilterTitle" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeftBanners">
+      <EntityTypeMapping TypeName="MYProjectDBModel.LeftBanner">
+        <MappingFragment StoreEntitySet="LeftBanners">
+          <ScalarProperty Name="LeftBannerId" ColumnName="LeftBannerId" />
+          <ScalarProperty Name="SliderImage" ColumnName="SliderImage" />
+          <ScalarProperty Name="SliderUrl" ColumnName="SliderUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="MYProjectDBModel.OrderDetail">
+        <MappingFragment StoreEntitySet="OrderDetails">
+          <ScalarProperty Name="OrderDetailId" ColumnName="OrderDetailId" />
+          <ScalarProperty Name="OrderTopId" ColumnName="OrderTopId" />
+          <ScalarProperty Name="OrderDetailProductId" ColumnName="OrderDetailProductId" />
+          <ScalarProperty Name="OrderDetailProductImage" ColumnName="OrderDetailProductImage" />
+          <ScalarProperty Name="OrderDetailProductName" ColumnName="OrderDetailProductName" />
+          <ScalarProperty Name="OrderDetailProductPrice" ColumnName="OrderDetailProductPrice" />
+          <ScalarProperty Name="OrderDetailProductPiece" ColumnName="OrderDetailProductPiece" />
+          <ScalarProperty Name="OrderDetailProductKdv" ColumnName="OrderDetailProductKdv" />
+          <ScalarProperty Name="OrderDetailProductStatus" ColumnName="OrderDetailProductStatus" />
+          <ScalarProperty Name="OrderDetailProductDiscount" ColumnName="OrderDetailProductDiscount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="MYProjectDBModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="OrderDeliveryDate" ColumnName="OrderDeliveryDate" />
+          <ScalarProperty Name="OrderStatu" ColumnName="OrderStatu" />
+          <ScalarProperty Name="OrderPaymentOptionDepositCard" ColumnName="OrderPaymentOptionDepositCard" />
+          <ScalarProperty Name="OrderPaymentCard" ColumnName="OrderPaymentCard" />
+          <ScalarProperty Name="OrderPaymentCardResult" ColumnName="OrderPaymentCardResult" />
+          <ScalarProperty Name="OrderPaymentStructuredIp" ColumnName="OrderPaymentStructuredIp" />
+          <ScalarProperty Name="OrderPaymentCardPin" ColumnName="OrderPaymentCardPin" />
+          <ScalarProperty Name="OrderPaymentInstallmentNumber" ColumnName="OrderPaymentInstallmentNumber" />
+          <ScalarProperty Name="OrderTotalVAT" ColumnName="OrderTotalVAT" />
+          <ScalarProperty Name="PriceExcludingOrderVAT" ColumnName="PriceExcludingOrderVAT" />
+          <ScalarProperty Name="PriceIncludingOrderTotalVAT" ColumnName="PriceIncludingOrderTotalVAT" />
+          <ScalarProperty Name="OrderTotalCargoPrice" ColumnName="OrderTotalCargoPrice" />
+          <ScalarProperty Name="TotalOrder" ColumnName="TotalOrder" />
+          <ScalarProperty Name="OrderMemberId" ColumnName="OrderMemberId" />
+          <ScalarProperty Name="OrderMemberName" ColumnName="OrderMemberName" />
+          <ScalarProperty Name="OrderMemberSurname" ColumnName="OrderMemberSurname" />
+          <ScalarProperty Name="OrderMemberEmail" ColumnName="OrderMemberEmail" />
+          <ScalarProperty Name="OrderMemberCompany" ColumnName="OrderMemberCompany" />
+          <ScalarProperty Name="OrderMemberTaxOffice" ColumnName="OrderMemberTaxOffice" />
+          <ScalarProperty Name="OrderMemberTaxNumber" ColumnName="OrderMemberTaxNumber" />
+          <ScalarProperty Name="OrderMemberGsm" ColumnName="OrderMemberGsm" />
+          <ScalarProperty Name="OrderMemberPhone" ColumnName="OrderMemberPhone" />
+          <ScalarProperty Name="OrderMemberCity" ColumnName="OrderMemberCity" />
+          <ScalarProperty Name="OrderMemberCounty" ColumnName="OrderMemberCounty" />
+          <ScalarProperty Name="OrderMemberAddress" ColumnName="OrderMemberAddress" />
+          <ScalarProperty Name="OrderNote" ColumnName="OrderNote" />
+          <ScalarProperty Name="OrderInvoiceName" ColumnName="OrderInvoiceName" />
+          <ScalarProperty Name="OrderInvoiceSurname" ColumnName="OrderInvoiceSurname" />
+          <ScalarProperty Name="OrderInvoiceEmail" ColumnName="OrderInvoiceEmail" />
+          <ScalarProperty Name="OrderInvoiceCompany" ColumnName="OrderInvoiceCompany" />
+          <ScalarProperty Name="OrderInvoiceTaxAdministration" ColumnName="OrderInvoiceTaxAdministration" />
+          <ScalarProperty Name="OrderInvoiceTaxNumber" ColumnName="OrderInvoiceTaxNumber" />
+          <ScalarProperty Name="OrderInvoiceGsm" ColumnName="OrderInvoiceGsm" />
+          <ScalarProperty Name="OrderInvoicePhone" ColumnName="OrderInvoicePhone" />
+          <ScalarProperty Name="OrderInvoiceCity" ColumnName="OrderInvoiceCity" />
+          <ScalarProperty Name="OrderInvoiceCounty" ColumnName="OrderInvoiceCounty" />
+          <ScalarProperty Name="OrderInvoiceAddress" ColumnName="OrderInvoiceAddress" />
+          <ScalarProperty Name="OrderInvoiceTrackingNumber" ColumnName="OrderInvoiceTrackingNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderStatusies">
+      <EntityTypeMapping TypeName="MYProjectDBModel.OrderStatusy">
+        <MappingFragment StoreEntitySet="OrderStatusies">
+          <ScalarProperty Name="OrderStatuId" ColumnName="OrderStatuId" />
+          <ScalarProperty Name="OrderStatu" ColumnName="OrderStatu" />
+          <ScalarProperty Name="OrderStatuColor" ColumnName="OrderStatuColor" />
+          <ScalarProperty Name="ActivePassive" ColumnName="ActivePassive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductFilters">
+      <EntityTypeMapping TypeName="MYProjectDBModel.ProductFilter">
+        <MappingFragment StoreEntitySet="ProductFilters">
+          <ScalarProperty Name="ProductFilterId" ColumnName="ProductFilterId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="FilterId" ColumnName="FilterId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductImages">
+      <EntityTypeMapping TypeName="MYProjectDBModel.ProductImage">
+        <MappingFragment StoreEntitySet="ProductImages">
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="MYProjectDBModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+          <ScalarProperty Name="ReferralPrice" ColumnName="ReferralPrice" />
+          <ScalarProperty Name="Rsp" ColumnName="Rsp" />
+          <ScalarProperty Name="ProductShortDescription" ColumnName="ProductShortDescription" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+          <ScalarProperty Name="ProductCategory" ColumnName="ProductCategory" />
+          <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+          <ScalarProperty Name="ProductActive" ColumnName="ProductActive" />
+          <ScalarProperty Name="ProductHit" ColumnName="ProductHit" />
+          <ScalarProperty Name="Sku" ColumnName="Sku" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+          <ScalarProperty Name="WatCode" ColumnName="WatCode" />
+          <ScalarProperty Name="ProductCriterion" ColumnName="ProductCriterion" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="SpeacilPrice" ColumnName="SpeacilPrice" />
+          <ScalarProperty Name="MustStockLine" ColumnName="MustStockLine" />
+          <ScalarProperty Name="Por" ColumnName="Por" />
+          <ScalarProperty Name="BarcodeCode1" ColumnName="BarcodeCode1" />
+          <ScalarProperty Name="BarcodeCode2" ColumnName="BarcodeCode2" />
+          <ScalarProperty Name="BarcodeCode3" ColumnName="BarcodeCode3" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CargoPrice" ColumnName="CargoPrice" />
+          <ScalarProperty Name="Sahibinden" ColumnName="Sahibinden" />
+          <ScalarProperty Name="N11" ColumnName="N11" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sectors">
+      <EntityTypeMapping TypeName="MYProjectDBModel.Sector">
+        <MappingFragment StoreEntitySet="Sectors">
+          <ScalarProperty Name="SectorId" ColumnName="SectorId" />
+          <ScalarProperty Name="SectorName" ColumnName="SectorName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShowcaseCompanies">
+      <EntityTypeMapping TypeName="MYProjectDBModel.ShowcaseCompany">
+        <MappingFragment StoreEntitySet="ShowcaseCompanies">
+          <ScalarProperty Name="VitrinId" ColumnName="VitrinId" />
+          <ScalarProperty Name="FirmaId" ColumnName="FirmaId" />
+          <ScalarProperty Name="VitrinSira" ColumnName="VitrinSira" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShowcaseProducts">
+      <EntityTypeMapping TypeName="MYProjectDBModel.ShowcaseProduct">
+        <MappingFragment StoreEntitySet="ShowcaseProducts">
+          <ScalarProperty Name="ShowcaseProductId" ColumnName="ShowcaseProductId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ShowcaseProductSort" ColumnName="ShowcaseProductSort" />
+          <ScalarProperty Name="ShowcaseProductTopId" ColumnName="ShowcaseProductTopId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Showcases">
+      <EntityTypeMapping TypeName="MYProjectDBModel.Showcas">
+        <MappingFragment StoreEntitySet="Showcases">
+          <ScalarProperty Name="ShowcaseId" ColumnName="ShowcaseId" />
+          <ScalarProperty Name="ShowcaseName" ColumnName="ShowcaseName" />
+          <ScalarProperty Name="ShowcaseSortNumber" ColumnName="ShowcaseSortNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sliders">
+      <EntityTypeMapping TypeName="MYProjectDBModel.Slider">
+        <MappingFragment StoreEntitySet="Sliders">
+          <ScalarProperty Name="SliderId" ColumnName="SliderId" />
+          <ScalarProperty Name="SliderImage" ColumnName="SliderImage" />
+          <ScalarProperty Name="SliderUrl" ColumnName="SliderUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="MYProjectDBModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VirtualPosBanks">
+      <EntityTypeMapping TypeName="MYProjectDBModel.VirtualPosBank">
+        <MappingFragment StoreEntitySet="VirtualPosBanks">
+          <ScalarProperty Name="BankId" ColumnName="BankId" />
+          <ScalarProperty Name="BankCode" ColumnName="BankCode" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="Bank3DLink" ColumnName="Bank3DLink" />
+          <ScalarProperty Name="BankMemberId" ColumnName="BankMemberId" />
+          <ScalarProperty Name="BankAnswer" ColumnName="BankAnswer" />
+          <ScalarProperty Name="Bank3DSecurity" ColumnName="Bank3DSecurity" />
+          <ScalarProperty Name="BankImage" ColumnName="BankImage" />
+          <ScalarProperty Name="BankAktivePassive" ColumnName="BankAktivePassive" />
+          <ScalarProperty Name="BankaSort" ColumnName="BankaSort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VirtualPosInstallments">
+      <EntityTypeMapping TypeName="MYProjectDBModel.VirtualPosInstallment">
+        <MappingFragment StoreEntitySet="VirtualPosInstallments">
+          <ScalarProperty Name="InstallmentId" ColumnName="InstallmentId" />
+          <ScalarProperty Name="BankId" ColumnName="BankId" />
+          <ScalarProperty Name="NumberOfInstallment" ColumnName="NumberOfInstallment" />
+          <ScalarProperty Name="InstallmentRate" ColumnName="InstallmentRate" />
+          <ScalarProperty Name="ActivePassive" ColumnName="ActivePassive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Settings">
+      <EntityTypeMapping TypeName="MYProjectDBModel.Setting">
+        <MappingFragment StoreEntitySet="Settings">
+          <ScalarProperty Name="SettingId" ColumnName="SettingId" />
+          <ScalarProperty Name="BasketLimitKeeps" ColumnName="BasketLimitKeeps" />
+          <ScalarProperty Name="OrderEmailAddress" ColumnName="OrderEmailAddress" />
+          <ScalarProperty Name="ContactMailAddress" ColumnName="ContactMailAddress" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Map" ColumnName="Map" />
+          <ScalarProperty Name="CompanyNumber" ColumnName="CompanyNumber" />
+          <ScalarProperty Name="Slogan" ColumnName="Slogan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

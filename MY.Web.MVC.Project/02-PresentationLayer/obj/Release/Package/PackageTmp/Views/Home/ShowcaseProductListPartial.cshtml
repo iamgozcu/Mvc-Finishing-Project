@@ -1,0 +1,107 @@
+﻿@model _00_DataAccessLayer.ViewModel.ShowcaseProductListModel
+
+@foreach (var item in Model.Showcase)
+{
+
+    <section id="featured-products">
+        <div class="container">
+            <div class="iconic-nav-bar">
+                <div class="icon-holder">
+                    <i class="fa fa-star"></i>
+                    <span class="triangle"></span>
+                </div>
+                <div class="bar">
+                    <h2>
+
+                        <span class="bold">@item.ShowcaseName</span>
+
+
+                    </h2>
+
+                    <div class="nav-buttons">
+                        <a class="btn-prev" href="#prev"></a>
+                        <a class="btn-next" href="#next"></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="products-holder product-carousel owl-carousel">
+                @foreach (var item1 in Model.ShowcaseProduct)
+                {
+
+                    if (item1.ShowcaseProductTopId == item.ShowcaseId)
+                    {
+                        foreach (var item2 in Model.Product)
+                        {
+                            if (item2.ProductId == item1.ProductId)
+                            {
+                                <div class="product-item">
+                                    <div class="head">
+
+                                        <div class="thumb">
+
+
+                                            <a href="/@item2.SeoUrl">
+
+
+                                                @foreach (var item3 in Model.ProductImage)
+                                                {
+                                                    if (item3 != null)
+                                                    {
+                                                        if (item2.ProductId == item3.ProductId)
+                                                        {
+                                                            <img alt="" width="300" height="200" src="~/Content/images/products/@item3.Path" />
+                                                        }
+                                                    }
+
+                                                }
+
+
+
+                                            </a>
+                                        </div>
+
+                                        <div class="price">
+
+                                            <div class="price-current">
+
+                                                <span class="currency">@item2.ProductPrice.ToString("C")</span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="star-holder">
+                                            <div class="star" data-score="3"></div>
+                                        </div>
+                                        <button class="btn-compare  btn-iconic"></button>
+                                    </div>
+                                    <div class="body">
+                                        <h3><a href="/@item2.SeoUrl">@item2.ProductName</a></h3>
+
+                                        <div class="excerpt">
+                                            @item2.ProductShortDescription
+                                        </div>
+
+                                        <div class="merged-buttons">
+                                            @*<button class="btn-add-to-cart le-btn btn-iconic ekle-sepet" data-id="@item2.ProductId" data-name="@item2.ProductName">sepete ekle</button>*@
+                                            <a class="btn-add-to-cart le-btn btn-iconic ekle-sepet" style="cursor:pointer" data-name="@item2.ProductName" data-id="@item2.ProductId">sepete ekle</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                    }
+                }
+            </div>
+
+
+        </div>
+    </section>
+
+
+}
+
+
+

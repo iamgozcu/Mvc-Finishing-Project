@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Ödeme Sayfası";
+    Layout = "~/Views/Shared/_userLayoutPage.cshtml";
+}
+
+<section id="breadcrumb">
+
+    <div class="container">
+        <div class="le-breadcrumb inline">
+            <div class="iconic-nav-bar">
+                <div class="icon-holder">
+                    <i class="fa fa-chain"></i>
+                    <span class="triangle"></span>
+                </div>
+                <div class="bar">
+                    <ul>
+                        <li><a href="@Url.Action("Index", "Home", new { id = UrlParameter.Optional })">Anasayfa</a></li>
+                        <li><a href="@Url.Action("Index", "Basket")">Sepet</a></li>
+                        <li><a href="@Url.Action("Index", "Checkout")">Fatura-Teslimat Adres</a></li>
+                        <li class="active">Ödeme</li>
+                    </ul>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="checkout" class="page-holder ">
+    <div class="container no-padding">
+
+        <div class="col-xs-12 col-md-12">
+
+
+            <div class="box-holder">
+                <div class="row">
+
+                    <div class="col-xs-12 col-md-12">
+                        <div id="iyzipay-checkout-form" class="responsive"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</section>

@@ -1,0 +1,158 @@
+﻿@model _00_DataAccessLayer.ViewModel.SettingModel
+
+@{
+    ViewBag.Title = "Ayarlar Güncelle";
+    Layout = "~/Areas/admin/Views/Shared/_adminLayoutPage.cshtml";
+}
+
+<div class="col-md-12">
+
+    <div class="block">
+        <div class="block-heading">
+            <div class="main-text h2">
+                İletişim Ayarları Güncelle
+            </div>
+            <div class="block-controls">
+                <span aria-hidden="true" class="icon icon-cross icon-size-medium block-control-remove"></span>
+                <span aria-hidden="true" class="icon icon-arrow-down icon-size-medium block-control-collapse"></span>
+            </div>
+        </div>
+        <div class="block-content-outer">
+            <div class="block-content-inner">
+                @using (Html.BeginForm("Index", "Setting", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <div class="form-group" style="display:none">
+                        @Html.EditorFor(model => model.SettingId, new { htmlAttributes = new { @class = "form-control rounded" } })
+                    </div>
+                    <div class="form-group">
+                        <label for="input-demo-n-1">@Html.DisplayNameFor(model => model.OrderEmailAddress)</label>
+                        @Html.EditorFor(model => model.OrderEmailAddress, new { htmlAttributes = new { @class = "form-control rounded" } })
+                        <div style="color:#d32f2f">
+                            @Html.ValidationMessageFor(model => model.OrderEmailAddress)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-demo-n-1">@Html.DisplayNameFor(model => model.ContactMailAddress)</label>
+                        @Html.EditorFor(model => model.ContactMailAddress, new { htmlAttributes = new { @class = "form-control rounded" } })
+                        <div style="color:#d32f2f">
+                            @Html.ValidationMessageFor(model => model.ContactMailAddress)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-demo-n-1">@Html.DisplayNameFor(model => model.Address)</label>
+                        @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control rounded" } })
+                        <div style="color:#d32f2f">
+                            @Html.ValidationMessageFor(model => model.Address)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-demo-n-1">@Html.DisplayNameFor(model => model.PostCode)</label>
+                        @Html.EditorFor(model => model.PostCode, new { htmlAttributes = new { @class = "form-control rounded" } })
+                        <div style="color:#d32f2f">
+                            @Html.ValidationMessageFor(model => model.PostCode)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-demo-n-1">@Html.DisplayNameFor(model => model.CompanyName)</label>
+                        @Html.EditorFor(model => model.CompanyName, new { htmlAttributes = new { @class = "form-control rounded" } })
+                        <div style="color:#d32f2f">
+                            @Html.ValidationMessageFor(model => model.CompanyName)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-demo-n-1">@Html.DisplayNameFor(model => model.GSM)</label>
+                        @Html.EditorFor(model => model.GSM, new { htmlAttributes = new { @class = "form-control rounded" } })
+                        <div style="color:#d32f2f">
+                            @Html.ValidationMessageFor(model => model.GSM)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-demo-n-1">@Html.DisplayNameFor(model => model.Phone)</label>
+                        @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control rounded" } })
+                        <div style="color:#d32f2f">
+                            @Html.ValidationMessageFor(model => model.Phone)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-demo-n-1">@Html.DisplayNameFor(model => model.Phone2)</label>
+                        @Html.EditorFor(model => model.Phone2, new { htmlAttributes = new { @class = "form-control rounded" } })
+                        <div style="color:#d32f2f">
+                            @Html.ValidationMessageFor(model => model.Phone2)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-demo-n-1">@Html.DisplayNameFor(model => model.Fax)</label>
+                        @Html.EditorFor(model => model.Fax, new { htmlAttributes = new { @class = "form-control rounded" } })
+                        <div style="color:#d32f2f">
+                            @Html.ValidationMessageFor(model => model.Fax)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-demo-n-1">@Html.DisplayNameFor(model => model.Map)</label>
+                        @Html.EditorFor(model => model.Map, new { htmlAttributes = new { @class = "form-control rounded" } })
+                        <div style="color:#d32f2f">
+                            @Html.ValidationMessageFor(model => model.Map)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input-demo-n-1">@Html.DisplayNameFor(model => model.CompanyNumber)</label>
+                        @Html.EditorFor(model => model.CompanyNumber, new { htmlAttributes = new { @class = "form-control rounded" } })
+                        <div style="color:#d32f2f">
+                            @Html.ValidationMessageFor(model => model.CompanyNumber)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input-demo-n-1">@Html.DisplayNameFor(model => model.Slogan)</label>
+                        @Html.EditorFor(model => model.Slogan, new { htmlAttributes = new { @class = "form-control rounded" } })
+                        <div style="color:#d32f2f">
+                            @Html.ValidationMessageFor(model => model.Slogan)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input-demo-n-1">@Html.DisplayNameFor(model => model.Facebook)</label>
+                        @Html.EditorFor(model => model.Facebook, new { htmlAttributes = new { @class = "form-control rounded" } })
+                        <div style="color:#d32f2f">
+                            @Html.ValidationMessageFor(model => model.Facebook)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-demo-n-1">@Html.DisplayNameFor(model => model.Twitter)</label>
+                        @Html.EditorFor(model => model.Twitter, new { htmlAttributes = new { @class = "form-control rounded" } })
+                        <div style="color:#d32f2f">
+                            @Html.ValidationMessageFor(model => model.Twitter)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-demo-n-1">@Html.DisplayNameFor(model => model.Instagram)</label>
+                        @Html.EditorFor(model => model.Instagram, new { htmlAttributes = new { @class = "form-control rounded" } })
+                        <div style="color:#d32f2f">
+                            @Html.ValidationMessageFor(model => model.Instagram)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-demo-n-1">@Html.DisplayNameFor(model => model.Linkedin)</label>
+                        @Html.EditorFor(model => model.Linkedin, new { htmlAttributes = new { @class = "form-control rounded" } })
+                        <div style="color:#d32f2f">
+                            @Html.ValidationMessageFor(model => model.Linkedin)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-demo-n-1">@Html.DisplayNameFor(model => model.Google)</label>
+                        @Html.EditorFor(model => model.Google, new { htmlAttributes = new { @class = "form-control rounded" } })
+                        <div style="color:#d32f2f">
+                            @Html.ValidationMessageFor(model => model.Google)
+                        </div>
+                    </div>
+                        <br />
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary form-control rounded" value="GÜNCELLE" />
+                        </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

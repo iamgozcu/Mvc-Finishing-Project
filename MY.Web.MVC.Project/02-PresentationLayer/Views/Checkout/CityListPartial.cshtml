@@ -1,0 +1,2 @@
+﻿@model _00_DataAccessLayer.Entity.City
+@Html.DropDownListFor(model => model.CityId, new SelectList(ViewBag.CityList, "CityId", "CityName"), new { @class = "le-input" })

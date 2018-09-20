@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B1B902C2-9EAD-41FF-B7BC-FDA8D2214D53}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_00_DataAccessLayer</RootNamespace>
+    <AssemblyName>00-DataAccessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity\Administrator.cs" />
+    <Compile Include="Entity\Bank.cs" />
+    <Compile Include="Entity\Banner.cs" />
+    <Compile Include="Entity\Brand.cs" />
+    <Compile Include="Entity\Cargo.cs" />
+    <Compile Include="Entity\CargoDetail.cs" />
+    <Compile Include="Entity\CargoTracking.cs" />
+    <Compile Include="Entity\Category.cs" />
+    <Compile Include="Entity\City.cs" />
+    <Compile Include="Entity\ContentPage.cs" />
+    <Compile Include="Entity\Country.cs" />
+    <Compile Include="Entity\Customer.cs" />
+    <Compile Include="Entity\CustomerDetail.cs" />
+    <Compile Include="Entity\District.cs" />
+    <Compile Include="Entity\Filter.cs" />
+    <Compile Include="Entity\FilterDetail.cs" />
+    <Compile Include="Entity\FilterProduct.cs" />
+    <Compile Include="Entity\Order.cs" />
+    <Compile Include="Entity\OrderDetail.cs" />
+    <Compile Include="Entity\OrderStatusy.cs" />
+    <Compile Include="Entity\Product.cs" />
+    <Compile Include="Entity\ProductCategory.cs" />
+    <Compile Include="Entity\ProductFilter.cs" />
+    <Compile Include="Entity\ProductImage.cs" />
+    <Compile Include="Entity\Sector.cs" />
+    <Compile Include="Entity\Setting.cs" />
+    <Compile Include="Entity\Showcase.cs" />
+    <Compile Include="Entity\ShowcaseProduct.cs" />
+    <Compile Include="Entity\Slider.cs" />
+    <Compile Include="Entity\Statistic.cs" />
+    <Compile Include="Entity\Town.cs" />
+    <Compile Include="Entity\VirtualPosBank.cs" />
+    <Compile Include="Entity\VirtualPosInstallment.cs" />
+    <Compile Include="Mapping\AdministratorMap.cs" />
+    <Compile Include="Mapping\BankMap.cs" />
+    <Compile Include="Mapping\BannerMap.cs" />
+    <Compile Include="Mapping\BrandMap.cs" />
+    <Compile Include="Mapping\CargoDetailMap.cs" />
+    <Compile Include="Mapping\CargoMap.cs" />
+    <Compile Include="Mapping\CargoTrackingMap.cs" />
+    <Compile Include="Mapping\CategoryMap.cs" />
+    <Compile Include="Mapping\CityMap.cs" />
+    <Compile Include="Mapping\ContentPageMap.cs" />
+    <Compile Include="Mapping\CountryMap.cs" />
+    <Compile Include="Mapping\CustomerDetailMap.cs" />
+    <Compile Include="Mapping\CustomerMap.cs" />
+    <Compile Include="Mapping\DistrictMap.cs" />
+    <Compile Include="Mapping\FilterDetailMap.cs" />
+    <Compile Include="Mapping\FilterMap.cs" />
+    <Compile Include="Mapping\FilterProductMap.cs" />
+    <Compile Include="Mapping\OrderDetailMap.cs" />
+    <Compile Include="Mapping\OrderMap.cs" />
+    <Compile Include="Mapping\OrderStatusyMap.cs" />
+    <Compile Include="Mapping\ProductCategoryMap.cs" />
+    <Compile Include="Mapping\ProductFilterMap.cs" />
+    <Compile Include="Mapping\ProductImageMap.cs" />
+    <Compile Include="Mapping\ProductMap.cs" />
+    <Compile Include="Mapping\SectorMap.cs" />
+    <Compile Include="Mapping\SettingMap.cs" />
+    <Compile Include="Mapping\ShowcaseMap.cs" />
+    <Compile Include="Mapping\ShowcaseProductMap.cs" />
+    <Compile Include="Mapping\SliderMap.cs" />
+    <Compile Include="Mapping\StatisticMap.cs" />
+    <Compile Include="Mapping\TownMap.cs" />
+    <Compile Include="Mapping\VirtualPosBankMap.cs" />
+    <Compile Include="Mapping\VirtualPosInstallmentMap.cs" />
+    <Compile Include="Migrations\201612051715571_OneMigration.cs" />
+    <Compile Include="Migrations\201612051715571_OneMigration.Designer.cs">
+      <DependentUpon>201612051715571_OneMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612100818338_TwoMigration.cs" />
+    <Compile Include="Migrations\201612100818338_TwoMigration.Designer.cs">
+      <DependentUpon>201612100818338_TwoMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612100838006_ThreeMigration.cs" />
+    <Compile Include="Migrations\201612100838006_ThreeMigration.Designer.cs">
+      <DependentUpon>201612100838006_ThreeMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612101300111_FourMigration.cs" />
+    <Compile Include="Migrations\201612101300111_FourMigration.Designer.cs">
+      <DependentUpon>201612101300111_FourMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612112006067_Five.cs" />
+    <Compile Include="Migrations\201612112006067_Five.Designer.cs">
+      <DependentUpon>201612112006067_Five.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612131629458_MigrationSix.cs" />
+    <Compile Include="Migrations\201612131629458_MigrationSix.Designer.cs">
+      <DependentUpon>201612131629458_MigrationSix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612131634216_MigrationSeven.cs" />
+    <Compile Include="Migrations\201612131634216_MigrationSeven.Designer.cs">
+      <DependentUpon>201612131634216_MigrationSeven.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612141405322_Eight.cs" />
+    <Compile Include="Migrations\201612141405322_Eight.Designer.cs">
+      <DependentUpon>201612141405322_Eight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612141426101_Nine.cs" />
+    <Compile Include="Migrations\201612141426101_Nine.Designer.cs">
+      <DependentUpon>201612141426101_Nine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612141439505_Ten.cs" />
+    <Compile Include="Migrations\201612141439505_Ten.Designer.cs">
+      <DependentUpon>201612141439505_Ten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612151653583_ElevenMigration.cs" />
+    <Compile Include="Migrations\201612151653583_ElevenMigration.Designer.cs">
+      <DependentUpon>201612151653583_ElevenMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612151744529_Twelve.cs" />
+    <Compile Include="Migrations\201612151744529_Twelve.Designer.cs">
+      <DependentUpon>201612151744529_Twelve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\MYProjectContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\AdminLoginModel.cs" />
+    <Compile Include="ViewModel\BasketModel.cs" />
+    <Compile Include="ViewModel\BrandModel.cs" />
+    <Compile Include="ViewModel\CategoryFooterListModel.cs" />
+    <Compile Include="ViewModel\CategoryModel.cs" />
+    <Compile Include="ViewModel\CategoryTopListModel.cs" />
+    <Compile Include="ViewModel\CustomerAddressModel.cs" />
+    <Compile Include="ViewModel\CustomerModel.cs" />
+    <Compile Include="ViewModel\OrderListModel.cs" />
+    <Compile Include="ViewModel\ProductBrandModel.cs" />
+    <Compile Include="ViewModel\ProductDetailListModel.cs" />
+    <Compile Include="ViewModel\ProductListModel.cs" />
+    <Compile Include="ViewModel\ProductModel.cs" />
+    <Compile Include="ViewModel\SendMailModel.cs" />
+    <Compile Include="ViewModel\SettingModel.cs" />
+    <Compile Include="ViewModel\ShowcaseModel.cs" />
+    <Compile Include="ViewModel\ShowcaseProductListModel.cs" />
+    <Compile Include="ViewModel\SliderModel.cs" />
+    <Compile Include="ViewModel\UserLoginModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201612051715571_OneMigration.resx">
+      <DependentUpon>201612051715571_OneMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612100818338_TwoMigration.resx">
+      <DependentUpon>201612100818338_TwoMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612100838006_ThreeMigration.resx">
+      <DependentUpon>201612100838006_ThreeMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612101300111_FourMigration.resx">
+      <DependentUpon>201612101300111_FourMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612112006067_Five.resx">
+      <DependentUpon>201612112006067_Five.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612131629458_MigrationSix.resx">
+      <DependentUpon>201612131629458_MigrationSix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612131634216_MigrationSeven.resx">
+      <DependentUpon>201612131634216_MigrationSeven.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612141405322_Eight.resx">
+      <DependentUpon>201612141405322_Eight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612141426101_Nine.resx">
+      <DependentUpon>201612141426101_Nine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612141439505_Ten.resx">
+      <DependentUpon>201612141439505_Ten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612151653583_ElevenMigration.resx">
+      <DependentUpon>201612151653583_ElevenMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612151744529_Twelve.resx">
+      <DependentUpon>201612151744529_Twelve.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

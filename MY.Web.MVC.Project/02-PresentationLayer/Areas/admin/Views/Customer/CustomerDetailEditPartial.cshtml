@@ -1,0 +1,46 @@
+﻿@model _00_DataAccessLayer.Entity.Customer
+
+<div class="form-group">
+    <label for="input-demo-n-1">Adı</label>
+    <input type="text" value="@Model.CustomerName" class="form-control rounded" />
+</div>
+
+<div class="form-group">
+    <label for="input-demo-n-1">Soyadı</label>
+    <input type="text" value="@Model.CustomerSurname" class="form-control rounded" />
+</div>
+
+<div class="form-group">
+    <label for="input-demo-n-1">E-Posta Adresi</label>
+    <input type="text" value="@Model.EmailAddress" class="form-control rounded" />
+</div>
+
+<div class="form-group">
+    <label for="input-demo-n-1">Şifre</label>
+    <input type="password" value="@Model.Password" class="form-control rounded" />
+</div>
+
+<div class="form-group">
+    <label class="control-label">Üyelik Tarihi</label>
+    <input type="date" value="@string.Format("{0:yyyy-MM-dd}", @Model.MembershipDate)" class="form-control rounded">
+</div>
+
+<div class="form-group">
+    <label for="input-demo-n-1">Pasif Aktif</label>
+    <div class="checkbox switchery-group">
+        @if (Model.ActivePassive == true)
+            {
+            <input type="checkbox" class="js-switch-blue js-switch-big" checked />
+        }
+        else
+        {
+            <input type="checkbox" class="js-switch-blue js-switch-big" />
+        }
+    </div>
+</div>
+
+<div class="form-group">
+    <input type="submit" class="btn btn-primary form-control rounded" value="Güncelle" />
+</div>
+
+

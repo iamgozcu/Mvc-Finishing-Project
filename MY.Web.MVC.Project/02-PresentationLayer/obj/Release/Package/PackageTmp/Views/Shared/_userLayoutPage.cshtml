@@ -1,0 +1,658 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="Amin Diary - Aka: LeAmino">
+    <meta name="keywords" content="Responsive, Template">
+    <meta name="robots" content="all">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="~/Content/css/prettyPhoto.css">
+    <link rel="stylesheet" href="~/Content/css/animate.css">
+    <link rel="stylesheet" href="~/Content/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/Content/css/owl.theme.css">
+    <link rel="stylesheet" href="~/Content/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="~/Content/css/yamm.css">
+    <link rel="stylesheet" href="~/Content/css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/css/stylesheet.css">
+    <style>
+        .bosGecme {
+            border: 2px solid #FD0505 !important;
+        }
+    </style>
+    <!--Start of Zendesk Chat Script-->
+    <script type="text/javascript">
+        window.$zopim || (function (d, s) {
+            var z = $zopim = function (c) {
+                z._.push(c)
+            }, $ = z.s =
+            d.createElement(s), e = d.getElementsByTagName(s)[0]; z.set = function (o) {
+                z.set.
+                _.push(o)
+            }; z._ = []; z.set._ = []; $.async = !0; $.setAttribute('charset', 'utf-8');
+            $.src = 'https://v2.zopim.com/?4XUKYVdc01d0Nrdmy2DCRxAWbS1SjSTN'; z.t = +new Date; $.
+            type = 'text/javascript'; e.parentNode.insertBefore($, e)
+        })(document, 'script');
+    </script>
+    <!--End of Zendesk Chat Script-->
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    @RenderSection("css", false)
+
+</head>
+
+<body>
+
+    <div id="preloader">
+        <div id="status">&nbsp;</div>
+        <noscript>JavaScript is off. Please enable to view full site.</noscript>
+    </div>
+
+    <div class="wrapper">
+
+
+        <header>
+            <div class="top-bar">
+                <div class="container">
+
+                    @{Html.RenderAction("TopAddressPartial", "Contact"); }
+
+
+
+                    <div class="sepeteekliendi" style="position: absolute;display:none;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 14px;
+    color: rgb(255, 255, 255);
+    background: rgb(29, 167, 150);
+    padding: 10px;
+    right: 0px;
+    top: 83px;">Sepete Ürün Eklendi</div>
+
+                </div>
+            </div>
+            <div class="container header-row">
+
+
+                <div class="col-xs-12 col-md-3">
+
+                </div>
+
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="logo">
+                        <a href="@Url.Action("Index", "Home", new { id = UrlParameter.Optional })">
+                            <img src="~/Content/images/logo.png" alt="logo" />
+                            <span>MarQet Kılıf</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3">
+                    <ul class="link-list inline">
+                        @*@{Html.RenderAction("TopCustomerSession", "Customer");}*@
+
+                        @{
+                            int customer = Convert.ToInt32(Session["CustomerId"]);
+                            { Html.RenderAction("TopCustomerSession", "Customer", new { customerId = customer }); }
+                        }
+
+                    </ul>
+                </div>
+
+
+            </div>
+            <div class="container ">
+
+                <div class="top-nav-holder">
+                    <div class="row">
+
+                        <div class="col-xs-12 col-md-6 col-lg-8  nav-menu top-menu-holder">
+                            <nav class="hidden-xs visible-sm visible-lg visible-md ">
+                                <ul class="nav">
+
+                                    <li>
+                                        <a href="@Url.Action("Index", "Home", new { id = UrlParameter.Optional })">Anasayfa</a>
+                                    </li>
+
+                                    @{Html.RenderAction("TopCategoryPartial", "Category"); }
+
+                                    <li>
+                                        <a href="@Url.Action("Index", "ContenPage", new { id = 1 })">hakkımızda</a>
+
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Index", "Contact")">İLETİŞİM</a>
+                                    </li>
+
+
+                                </ul>
+
+                            </nav>
+
+                            <select class="top-drop-menu nav hidden-md hidden-sm visible-xs hidden-lg">
+                                <optgroup label="İsimli Kılıflar">
+                                    <option value="#" selected="selected">
+                                        Kitap Ürünleri
+                                    </option>
+                                    <option value="#">
+                                        Müzik Aleti
+                                    </option>
+                                </optgroup>
+
+                                <optgroup label="Resimli Kılıflar">
+                                    <option value="#">
+                                        İç Bakım
+                                    </option>
+                                    <option value="#">
+                                        Dış Bakım
+                                    </option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="col-xs-12 col-md-3 col-lg-2 no-margin search-holder">
+                            <div class="searchbox">
+                                <a href="" class="fa fa-search search-button">
+
+                                </a>
+                                <div class="field">
+                                    <form>
+                                        <input type="text" id="productNameSearch" data-placeholder="Aramak İstediğiniz Ürün.." />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-3 col-lg-2 basket-holder">
+                            <div class="basket">
+
+                                <div class="dropdown">
+                                    <a class="dropdown-toggle" data-hover="dropdown" href="#">
+                                        <div class="basket-icon">
+                                            <img class="svg" alt="basket" src="~/Content/images/basket.svg" />
+
+                                            <span id="toplamAdet">
+
+                                            </span>
+
+                                        </div>
+
+
+                                        <span class="sepetToplamFiyat">
+
+                                        </span>
+
+                                    </a>
+                                    <ul id="sepet12" class="dropdown-menu">
+
+                                        @*<li>
+                                                <div class="basket-item">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-2 col-md-4">
+                                                            <div class="thumb">
+                                                                <img src="~/Content/images/products/iphone6s.jpg" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-10 col-md-8">
+                                                            <div class="title">Iphone 6S</div>
+                                                            <div class="price">170.00 TL X <span>1</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <a class="close-btn" href="#"></a>
+                                                </div>
+                                            </li>*@
+
+
+                                    </ul>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        @RenderBody()
+        <section id="newsletter" class="section-newsletter">
+            <div class="container">
+
+
+                <div class="col-xs-12 col-md-1">
+                    <div class="icon-holder big">
+                        <i class="fa fa-newspaper-o"></i>
+                        <span class="triangle"></span>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <div class="text">
+                        KAMPANYALARDAN HABERDAR OLMAK<br>
+                        İÇİN MAİL LİSTEMİZE KAYIT OLUNUZ.
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-7">
+                    <form class="subscribe-form">
+                        <input data-placeholder="Mail Adresiniz.." id="txtEmail" class="le-input col-xs-12 col-md-10">
+                        <button type="submit" id="sendMail" class="le-btn icon-btn fa fa-send"></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="banner-slider wow fadeInUp">
+            <div class="container">
+
+                <a class="btn-next nav-btn circular-icon" href="#"></a>
+                <a class="btn-prev nav-btn circular-icon" href="#"></a>
+
+                <div class="banner-carousel owl-carousel">
+
+                    @{Html.RenderAction("DefaultSliderPartial", "Slider"); }
+
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section-brands-slider">
+            <div class="container">
+                <a href="#next" class="brands-next btn-next"></a>
+                <a href="#prev" class="brands-prev btn-prev"></a>
+                <div class="brands-slider default-carousel owl-carousel">
+
+                    @{Html.RenderAction("DefaultBrandPartial", "Brand"); }
+
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="section-footer">
+            <div class="container">
+
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="footer-column">
+                        <h2>
+                            <span class="icon-holder">
+                                <i class="fa fa-info"></i>
+                                <span class="triangle"></span>
+                            </span>
+                            İçerik Sayfaları
+                        </h2>
+                        <ul class="footer-links-holder">
+
+                            @{Html.RenderAction("FooterContentPagePartial", "ContenPage"); }
+
+                        </ul>
+                    </div>
+                </div>
+
+                @{Html.RenderAction("FooterCategoryPartial", "Category"); }
+
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="footer-column">
+                        <h2>
+                            <span class="icon-holder">
+                                <i class="fa  fa-phone"></i>
+                                <span class="triangle"></span>
+                            </span>
+                            Adres
+                        </h2>
+                        @{Html.RenderAction("FooterAddressPartial", "Contact"); }
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="section-copyright">
+            <div class="container">
+                <div class="copyright col-xs-12 col-sm-5">
+                    <p>
+                        <strong>© Plato Myo 2017</strong>. Tüm Hakları Saklıdır.<br>
+                        Tasarım ve Kodlama <a href="https://www.facebook.com/muhammed.yilmaz.ym">Muhammed Yılmaz</a>
+                        & <a href="https://www.facebook.com/mihriinisa?fref=ts">Hatice Nisa An</a>
+                    </p>
+                </div>
+                <div class="copyright-links col-xs-12 col-sm-7">
+                    <ul class="inline">
+                        <li><a href="@Url.Action("Index", "ContenPage", new { id = 4 })">satış sözleşmesi</a></li>
+                        <li><a href="@Url.Action("Index", "Customer")">üyelik bilgileri</a></li>
+                        <li><a href="@Url.Action("Index", "Contact")">iletişim</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+    <a class="goto-top" href="#gotop"></a>
+
+    <script src="~/Content/js/jquery-1.11.1.min.js"></script>
+    <script src="~/Content/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="~/Content/css/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/twitter-bootstrap-hover-dropdown.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/css_browser_selector.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.easing-1.3.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.validate.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/wow.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.raty.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/bootstrap-slider.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/script.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            sepet();
+            SepetItemSayisi();
+            SepetToplamTutar();
+            sepetSayfasi();
+            KargoDahilSepetToplam();
+            KargoToplam();
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sendMail").click(function () {
+                var EmailAddress = $("#txtEmail").val();
+                var TableUrl = '@Url.Action("SendMailLayout", "Contact")';
+                $.ajax({
+                    type: 'POST',
+                    data: "{EmailAddress:'" + EmailAddress + "'}",
+                    url: TableUrl,
+                    dataType: "JSON",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (response) {
+
+                        if (response != null && response.success) {
+                            alert(response.responseText);
+                        }
+                        else {
+                            alert(response.responseText);
+                        }
+                    },
+                    error: function (msg) {
+                        alert("Mail göndermede hata oluştu.");
+                    }
+                });
+
+            });
+
+        });
+
+    </script>
+
+    @*sepete ekle*@
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".ekle-sepet").click(function () {
+                $('html,body').animate({
+                    scrollTop: 0
+                }, 1000);
+                var id = $(this).attr("data-id");
+                var adet = 1;
+                var name = $(this).attr("data-name");
+                var TableUrl = '@Url.Action("CreateProductBasket", "Basket")';
+                $(".sepeteekliendi").delay(1000).slideDown(1000);
+                $.ajax({
+                    type: 'POST',
+                    data: "{id:'" + id + "',adet:'" + adet + "'}",
+                    url: TableUrl,
+                    dataType: "JSON",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (response) {
+                        sepet();
+                        SepetItemSayisi();
+                        SepetToplamTutar();
+                        if (response != null && response.success) {
+                            $(".sepeteekliendi").hide(500);
+                        }
+                        else {
+                            alert(response.responseText);
+                        }
+
+                    },
+                    error: "Hata!"
+                });
+
+            });
+
+        });
+
+        $(document).ready(function () {
+            $(".detay-ekle-sepet").click(function () {
+                $('html,body').animate({
+                    scrollTop: 0
+                }, 1000);
+                var id = $(this).attr("data-id");
+                var adet = $("#urunDetaySepetAdet").val();
+                var name = $(this).attr("data-name");
+                var TableUrl = '@Url.Action("CreateProductBasket", "Basket")';
+                $(".sepeteekliendi").delay(1000).slideDown(1000);
+                $.ajax({
+                    type: 'POST',
+                    data: "{id:'" + id + "',adet:'" + adet + "'}",
+                    url: TableUrl,
+                    dataType: "JSON",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (response) {
+                        sepet();
+                        SepetItemSayisi();
+                        SepetToplamTutar();
+                        if (response != null && response.success) {
+                            $(".sepeteekliendi").hide(500);
+                        }
+                        else {
+                            alert(response.responseText);
+                        }
+
+                    },
+                    error: "Hata!"
+                });
+
+            });
+
+        });
+
+        function sepet() {
+            var TableUrl1 = '@Url.Action("SepetGetir", "Basket")';
+            $.ajax({
+                type: "POST",
+                url: TableUrl1,
+                data: '{}',
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'JSON',
+                success: function (response) {
+                    $("#sepet12").html(response.responseText);
+                    //alert(response.responseText);
+
+                }, error: function (response) {
+
+                }
+            });
+        }
+
+
+        function SepetItemSayisi() {
+            var TableUrl1 = '@Url.Action("SepetSayisi", "Basket")';
+            $.ajax({
+                type: "POST",
+                url: TableUrl1,
+                data: '{}',
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'JSON',
+                success: function (response) {
+                    $("#toplamAdet").html(response.responseText);
+
+                }, error: function (response) {
+
+                }
+            });
+        }
+
+        function SepetToplamTutar() {
+            var TableUrl1 = '@Url.Action("SepetToplam", "Basket")';
+            $.ajax({
+                type: "POST",
+                url: TableUrl1,
+                data: '{}',
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'JSON',
+                success: function (response) {
+                    $(".sepetToplamFiyat").html(response.responseText);
+
+                }, error: function (response) {
+
+                }
+            });
+        }
+
+        function KargoDahilSepetToplam() {
+            var TableUrl1 = '@Url.Action("KargoDahilSepetToplam", "Basket")';
+            $.ajax({
+                type: "POST",
+                url: TableUrl1,
+                data: '{}',
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'JSON',
+                success: function (response) {
+                    $(".kargodahilsepettoplam").html(response.responseText);
+
+                }, error: function (response) {
+
+                }
+            });
+        }
+
+        function KargoToplam() {
+            var TableUrl1 = '@Url.Action("KargoToplam", "Basket")';
+            $.ajax({
+                type: "POST",
+                url: TableUrl1,
+                data: '{}',
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'JSON',
+                success: function (response) {
+                    $(".kargotoplamsepet").html(response.responseText);
+
+                }, error: function (response) {
+
+                }
+            });
+        }
+
+
+        function sepetSayfasi() {
+            var TableUrl1 = '@Url.Action("SepetGetirSepetSayfasi", "Basket")';
+            $.ajax({
+                type: "POST",
+                url: TableUrl1,
+                data: '{}',
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'JSON',
+                success: function (response) {
+                    $("#sepetSayfasiGetir").html(response.responseText);
+                }, error: function (cevap) {
+
+                }
+            });
+        }
+
+        function sepettensil(x) {
+            var TableUrl = '@Url.Action("SepetSayfasiUrunSil", "Basket")';
+            $.ajax({
+                type: "POST",
+                url: TableUrl,
+                data: '{id:"' + x + '"}',
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'JSON',
+                success: function (response) {
+                    sepet();
+                    SepetItemSayisi();
+                    SepetToplamTutar();
+                    sepetSayfasi();
+                    KargoDahilSepetToplam();
+                    KargoToplam();
+                }, error: function (response) {
+
+                }
+            });
+        }
+
+        function sepettenindir(x, y) {
+            if (y > 1) {
+                y += -1;
+                var id = $(this).attr("data-id");
+                var TableUrl = '@Url.Action("SepettenIndir", "Basket")';
+                $.ajax({
+                    type: "POST",
+                    url: TableUrl,
+                    data: "{id:'" + x + "',adet:'" + y + "'}",
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'JSON',
+                    success: function (response) {
+                        sepet();
+                        SepetItemSayisi();
+                        SepetToplamTutar();
+                        sepetSayfasi();
+                        KargoDahilSepetToplam();
+                        KargoToplam();
+                    }, error: function (response) {
+
+                    }
+                });
+            }
+
+        }
+
+
+        function sepettenarttir(x, y) {
+
+                y += +1;
+                var id = $(this).attr("data-id");
+                var TableUrl = '@Url.Action("SepettenArttirr", "Basket")';
+                $.ajax({
+                    type: "POST",
+                    url: TableUrl,
+                    data: "{id:'" + x + "',adet:'" + y + "'}",
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'JSON',
+                    success: function (response) {
+                        sepet();
+                        SepetItemSayisi();
+                        SepetToplamTutar();
+                        sepetSayfasi();
+                        KargoDahilSepetToplam();
+                        KargoToplam();
+                    }, error: function (response) {
+
+                    }
+                });
+            }
+
+    </script>
+
+</body>
+
+</html>

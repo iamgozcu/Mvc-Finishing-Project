@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Sepet";
+    Layout = "~/Views/Shared/_userLayoutPage.cshtml";
+}
+
+<section id="breadcrumb">
+
+    <div class="container">
+        <div class="le-breadcrumb inline">
+            <div class="iconic-nav-bar">
+                <div class="icon-holder">
+                    <i class="fa fa-chain"></i>
+                    <span class="triangle"></span>
+                </div>
+                <div class="bar">
+                    <ul>
+                        <li><a href="@Url.Action("Index", "Home")">Anasayfa</a></li>
+                        <li class="active">Sepet</li>
+
+                    </ul>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="cart" class="page-holder ">
+    <div class="container">
+
+
+        <div class="row ">
+
+            <div class="col-xs-12">
+                <div class="shopping-cart-page box">
+                    <div class="icon-holder small badge-style">
+                        <i class="fa fa-shopping-cart "></i>
+                        <span class="triangle"></span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table ">
+                            <thead>
+                                <tr>
+                                    <th class="col-xs-12 col-md-2">Foto</th>
+                                    <th class="col-xs-12 col-md-2">Ürün Hakkında</th>
+                                    <th class="col-xs-12 col-md-2 price-column">Fiyatı</th>
+                                    <th class="col-xs-12 col-md-2 price-column">Kargo Fiyatı</th>
+                                    <th class="col-xs-12 col-md-2">Adet</th>
+                                    <th class="col-xs-12 col-md-2 price-column">Toplam Fiyat</th>
+                                    <th class="col-xs-12 col-md-2">Sil</th>
+                                </tr>
+                            </thead>
+                            <tbody id="sepetSayfasiGetir">
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="merged-buttons">
+                        <div style="clear: both;text-align: right;font-size: 15px;font-weight: bold;">
+                            <div class="sc_kargo">Tutar : <span class="sepetToplamFiyat"></span></div>
+                            <div class="sc_kargo">Kargo Tutar : <span class="kargotoplamsepet"></span></div>
+                            <div class="sc_toplam">Kargo Dahil Toplam Tutar : <span class="kargodahilsepettoplam"></span></div>
+                        </div>
+                        <br />
+                        <a href="@Url.Action("Index", "Checkout")" class="le-btn small">Ödemeyi Tamamla</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+</section>

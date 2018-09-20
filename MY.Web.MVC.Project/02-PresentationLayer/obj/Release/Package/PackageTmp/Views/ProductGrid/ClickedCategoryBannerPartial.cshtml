@@ -1,0 +1,13 @@
+﻿@model _00_DataAccessLayer.Entity.Category
+
+@if (Model.CategoryBanner != "yok.jpg")
+{
+    <div class="row">
+        <div class="mosaic-holder col-xs-12">
+            <img alt="" src="~/Content/images/categoryBanner/@Model.CategoryBanner" />
+        </div>
+    </div>
+    <br />
+    <br />
+
+}

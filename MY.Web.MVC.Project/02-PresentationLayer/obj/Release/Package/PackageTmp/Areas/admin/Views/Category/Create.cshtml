@@ -1,0 +1,90 @@
+﻿@model _00_DataAccessLayer.ViewModel.CategoryModel
+@{
+    ViewBag.Title = "Kategori Ekle";
+    Layout = "~/Areas/admin/Views/Shared/_adminLayoutPage.cshtml";
+}
+
+@section css{
+    <link type="text/css" href="~/Areas/admin/Content/assets/css/optional/switchery.min.css" rel="stylesheet" />
+    <link type="text/css" href="~/Areas/admin/Content/assets/css/optional/powerange.min.css" rel="stylesheet" />
+    <link type="text/css" href="~/Areas/admin/Content/assets/css/optional/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+    <link type="text/css" href="~/Areas/admin/Content/assets/css/optional/bootstrap-tagsinput.min.css" rel="stylesheet" />
+    <link type="text/css" href="~/Areas/admin/Content/assets/css/optional/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link type="text/css" href="~/Areas/admin/Content/assets/css/optional/bootstrap-multiselect.min.css" rel="stylesheet" />
+    <link type="text/css" href="~/Areas/admin/Content/assets/css/demo-files/form-extras.css" rel="stylesheet" />
+}
+
+<div class="col-md-12">
+    <div class="block">
+        <div class="block-heading">
+            <div class="main-text h2">
+                Müşteri Ekle
+            </div>
+            <div class="block-controls">
+                <span aria-hidden="true" class="icon icon-cross icon-size-medium block-control-remove"></span>
+                <span aria-hidden="true" class="icon icon-arrow-down icon-size-medium block-control-collapse"></span>
+            </div>
+        </div>
+        <div class="block-content-outer">
+            <div class="block-content-inner">
+                @using (Html.BeginForm("Create", "Category", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                        <div class="form-group">
+                            <label for="input-demo-n-1">@Html.DisplayNameFor(model => model.CategoryName)</label>
+                            @Html.EditorFor(model => model.CategoryName, new { htmlAttributes = new { @class = "form-control rounded" } })
+                            <div style="color:#d32f2f">
+                                @Html.ValidationMessageFor(model => model.CategoryName)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="input-demo-n-1">@Html.DisplayNameFor(model => model.ProductGridSeoUrl)</label>
+                            @Html.EditorFor(model => model.ProductGridSeoUrl, new { htmlAttributes = new { @class = "form-control rounded" } })
+                            <div style="color:#d32f2f">
+                                @Html.ValidationMessageFor(model => model.ProductGridSeoUrl)
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="input-demo-n-1">@Html.DisplayNameFor(model => model.ActivePassive)</label>
+                            <div class="checkbox switchery-group">
+                                @Html.EditorFor(model => model.ActivePassive, new { htmlAttributes = new { @class = "js-switch-blue js-switch-big" } })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="input-demo-n-1">@Html.DisplayNameFor(model => model.CategoryImage)</label>
+                            <input type="file" name="image" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="input-demo-n-1">@Html.DisplayNameFor(model => model.CategoryBanner)</label>
+                            <input type="file" name="banner" />
+                        </div>
+
+                        <br />
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary form-control rounded" value="EKLE" />
+                        </div>
+
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/jquery.mask.min.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/switchery.min.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/powerange.min.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/jquery.bootstrap-touchspin.min.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/bootstrap-tagsinput.min.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/misc/typeahead.bundle.min.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/misc/moment.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/bootstrap-multiselect.min.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/ckeditor/adapters/jquery.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/demo-files/form-extras.js"></script>
+}

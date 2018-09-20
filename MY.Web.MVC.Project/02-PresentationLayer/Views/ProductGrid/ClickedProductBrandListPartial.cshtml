@@ -1,0 +1,17 @@
+﻿@model List<_00_DataAccessLayer.ViewModel.ProductBrandModel>
+<div class="size-filter widget">
+    <div class="icon-holder small">
+        <i class="fa fa-cube"></i>
+        <span class="triangle"></span>
+    </div>
+    <h2>Markalar</h2>
+    <ul>
+        @foreach (var item in Model)
+        {
+
+            <li><label class="checkbox-inline"><input type="checkbox" value="">@item.Brand.BrandName</label></li>
+        }
+
+    </ul>
+
+</div>

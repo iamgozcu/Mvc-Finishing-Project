@@ -1,0 +1,9 @@
+﻿@model List<_00_DataAccessLayer.Entity.ContentPage>
+
+@foreach (var item in Model)
+{
+    <li><a href='@Url.Action("Index", "ContenPage", new {id = item.PageId })'>@item.PageName</a></li>
+}
+<li><a href="@Url.Action("Index", "Contact")">Adres & İletişim</a></li>
+
+      

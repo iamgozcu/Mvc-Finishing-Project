@@ -1,0 +1,43 @@
+﻿@model _00_DataAccessLayer.Entity.Product
+@{
+    ViewBag.Title = "Ürün Resmi Ekle";
+    Layout = "~/Areas/admin/Views/Shared/_adminLayoutPage.cshtml";
+}
+<div class="col-md-12">
+
+    <div class="block">
+        <div class="block-heading">
+            <div class="main-text h2">
+                Ürün Resmi Ekle
+            </div>
+            <div class="block-controls">
+                <span aria-hidden="true" class="icon icon-cross icon-size-medium block-control-remove"></span>
+                <span aria-hidden="true" class="icon icon-arrow-down icon-size-medium block-control-collapse"></span>
+            </div>
+        </div>
+        <div class="block-content-outer">
+            <div class="block-content-inner">
+                @using (Html.BeginForm("Create", "ProductImage", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                        <div class="form-group">
+                            <label for="input-demo-n-1">Resim Seçiniz..</label>
+                            <input type="file" name="image" />
+                        </div>
+
+                        <div class="form-group" style="display:none">
+                        
+                           @Html.EditorFor(model => model.ProductId, new { htmlAttributes = new { @class = "form-control rounded" } }) />
+
+                        </div>
+                        
+
+                        <br />
+                        <div class="form-group">
+                            <input type="submit" id="message" class="btn btn-primary form-control rounded" value="EKLE" />
+                        </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

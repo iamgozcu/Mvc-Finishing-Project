@@ -1,0 +1,12 @@
+C:\Users\GhettoBwoy\Documents\GitHub\MY.Web.MVC.Project\01-BusinesLayer\bin\Release\01-BusinesLayer.dll.config
+C:\Users\GhettoBwoy\Documents\GitHub\MY.Web.MVC.Project\01-BusinesLayer\bin\Release\01-BusinesLayer.dll
+C:\Users\GhettoBwoy\Documents\GitHub\MY.Web.MVC.Project\01-BusinesLayer\bin\Release\01-BusinesLayer.pdb
+C:\Users\GhettoBwoy\Documents\GitHub\MY.Web.MVC.Project\01-BusinesLayer\bin\Release\00-DataAccessLayer.dll
+C:\Users\GhettoBwoy\Documents\GitHub\MY.Web.MVC.Project\01-BusinesLayer\bin\Release\EntityFramework.dll
+C:\Users\GhettoBwoy\Documents\GitHub\MY.Web.MVC.Project\01-BusinesLayer\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\GhettoBwoy\Documents\GitHub\MY.Web.MVC.Project\01-BusinesLayer\bin\Release\00-DataAccessLayer.pdb
+C:\Users\GhettoBwoy\Documents\GitHub\MY.Web.MVC.Project\01-BusinesLayer\bin\Release\EntityFramework.xml
+C:\Users\GhettoBwoy\Documents\GitHub\MY.Web.MVC.Project\01-BusinesLayer\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\GhettoBwoy\Documents\GitHub\MY.Web.MVC.Project\01-BusinesLayer\obj\Release\01-BusinesLayer.csprojResolveAssemblyReference.cache
+C:\Users\GhettoBwoy\Documents\GitHub\MY.Web.MVC.Project\01-BusinesLayer\obj\Release\01-BusinesLayer.dll
+C:\Users\GhettoBwoy\Documents\GitHub\MY.Web.MVC.Project\01-BusinesLayer\obj\Release\01-BusinesLayer.pdb

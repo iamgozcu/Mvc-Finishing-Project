@@ -1,0 +1,46 @@
+﻿@model List<_00_DataAccessLayer.ViewModel.ProductListModel>
+@foreach (var item in Model)
+{
+    <div class="product-item wide">
+        <div class="row">
+            <div class="col-xs-12 col-md-4 no-margin">
+                <div class="head">
+
+                    <div class="thumb">
+                        <a href="/@item.Product.SeoUrl">
+                          <img alt="" width="267" height="243" src="~/Content/images/products/@item.ProductImage.Path" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-8 no-margin">
+                <div class="body">
+
+                    <a href="/@item.Product.SeoUrl"><h3>@item.Product.ProductName</h3></a>
+                    <div class="price">
+
+                        <div class="price-current">
+                            <span class="currency">@item.Product.ProductPrice.ToString("C")</span>
+                        </div>
+                    </div>
+
+                    <div class="star-holder">
+                        <div class="star" data-score="1"></div>
+                    </div>
+
+                    <div class="excerpt">
+                       @item.Product.ProductShortDescription
+                    </div>
+                    <div class="buttons-holder">
+
+                        <button class="btn-add-to-cart le-btn btn-iconic ekle-sepet" data-id="@item.Product.ProductId">sepete ekle</button>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+}
+

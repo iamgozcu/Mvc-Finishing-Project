@@ -1,0 +1,680 @@
+﻿@model _00_DataAccessLayer.Entity.City
+@{
+    ViewBag.Title = "Fatura-Teslimat Adres";
+    Layout = "~/Views/Shared/_userLayoutPage.cshtml";
+}
+
+<section id="breadcrumb">
+
+    <div class="container">
+        <div class="le-breadcrumb inline">
+            <div class="iconic-nav-bar">
+                <div class="icon-holder">
+                    <i class="fa fa-chain"></i>
+                    <span class="triangle"></span>
+                </div>
+                <div class="bar">
+                    <ul>
+                        <li><a href="@Url.Action("Index", "Home", new { id = UrlParameter.Optional })">Anasayfa</a></li>
+                        <li><a href="@Url.Action("Index", "Basket")">Sepet</a></li>
+                        <li class="active">Fatura-Teslimat Adres</li>
+
+                    </ul>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="checkout" class="page-holder ">
+    <div class="container no-padding">
+
+        <div class="col-xs-12 col-md-8">
+            <div class="box" style="float: none;">
+                <div class="icon-holder small badge-style">
+                    <i class="fa fa-check-circle-o "></i>
+                    <span class="triangle"></span>
+                </div>
+                <div class="box-holder">
+                    <h2>FATURA BİLGİLERİ </h2>
+
+
+                    <div class="table-form">
+                        <div class="row">
+                            <label style="float:left;"><input type="radio" name="Fatura" checked class="Bireysel" value="Bireysel" />Bireysel Fatura</label>
+                            <label style="float:left;margin-left:30px;"><input type="radio" name="Fatura" class="Kurumsal" value="Kurumsal" />Kurumsal Fatura</label>
+                        </div>
+                        <div class="row">
+                           
+                            <div class="col-xs-12 col-md-4">
+                                <div class="field-group">
+                                    <label>Adınız *</label>
+                                    <input type="text" class="le-input" id="ad" data-placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-4">
+                                <div class="field-group">
+                                    <label>Soyadnız *</label>
+                                    <input type="text" class="le-input" id="soyad" data-placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-4">
+                                <div class="field-group">
+                                    <label>E-Posta *</label>
+                                    <input type="text" class="le-input" id="Eposta" data-placeholder="">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-holder">
+                    <div class="table-form ">
+
+                        <div class="row">
+
+
+
+                            <div class="col-xs-12 col-md-4">
+                                <div class="field-group">
+                                    <label class="lblfirma">Firma Adı(Fatura) *</label>
+                                    <input type="text" class="le-input" id="Firma" data-placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-4">
+                                <div class="field-group">
+                                    <label class="lblfirma">Vergi Dairesi *</label>
+                                    <input type="text" class="le-input" id="Vergi_Dairesi" data-placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-4">
+                                <div class="field-group">
+                                    <label class="lbltc">Vergi No/TC *</label>
+                                    <input type="number" maxlength="11" class="le-input" id="Vergi_No" data-placeholder="">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-holder">
+
+                    <div class="table-form ">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-4">
+                                <div class="field-group">
+                                    <label>Cep Telefonu *</label>
+                                    <input type="number" class="le-input" id="GSM" data-placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-4">
+                                <div class="field-group">
+                                    <label>Telefon</label>
+                                    <input type="number" class="le-input" id="Telefon" data-placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-holder">
+                    <div class="table-form ">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-4">
+                                <div class="field-group">
+                                    <label>Şehir *</label>
+
+                                    @*@{Html.RenderAction("CityListPartial", "Checkout");}*@
+
+                                    @*<span id="sehirGet"></span>*@
+
+                                    <select name="Sehir" class="select" style="padding: 7px;" id="sehir"></select>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-4">
+                                <div class="field-group">
+                                    <label>İlçe *</label>
+                                    <span id="resultilce"> <select name="Sehir" class="select" style="padding: 7px;" id="sehir2"> <option value="0"> İlçe </option></select> </span>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-4">
+                                <div class="field-group">
+                                    <label>Adres *</label>
+                                    <textarea type="text" class="le-input" rows="3" id="adres"> </textarea>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-24 col-md-4">
+            <div class="box sidebar">
+
+                <div class="widget simple-widget">
+                    <div class="icon-holder small">
+                        <i class="fa fa-turkish-lira"></i>
+                        <span class="triangle"></span>
+                    </div>
+                    <h2>Toplamlar</h2>
+                    <div class="body">
+                        <div class="toplam_fiyat">
+                            <div class="fiyat_row">
+                                <div class="fiyat_table">
+                                    <span class="cell cell_1">Tutar : </span><span class="cell cell_2">
+                                        <span class="big" id="kdvsizToplam">
+                                            <span class="sepetToplamFiyat"></span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="fiyat_row">
+                                <div class="fiyat_table">
+                                    <span class="cell cell_1">Kargo : </span><span class="cell cell_2"><span class="big" id="kargoTutaridir"></span><span class="kargotoplamsepet"></span></span>
+                                </div>
+                            </div>
+                            <div class="fiyat_row toplam_tutar_row">
+                                <div class="fiyat_table">
+                                    <span class="cell cell_1">KARGO DAHİL TOPLAM TUTAR : </span><span class="cell cell_2">
+                                        <span class="big" id="toplamtutarkdvsiz"><span class="kargodahilsepettoplam"></span></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom_wrap">
+                            <br />
+                            <div style="cursor:pointer" class="le-btn big alisverisi_tamamla">Alışverişi Tamamla</div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-xs-12">
+        <div class="checkbox">
+            <!-- Slide THREE -->
+            
+            <label style=" font-size 14px;
+                   font-weight bold;
+                   margin-left -121px;
+                   margin-top 33px;"></label>
+        </div>
+    </div>
+
+        <div class="col-xs-12 col-md-8">
+            <div class="box" style="float:none;" id="faturaAdresleri">
+                <div class="icon-holder small badge-style">
+                    <i class="fa fa-check-circle-o "></i>
+                    <span class="triangle"></span>
+                </div>
+                <div class="box-holder">
+                    <h2>TESLİMAT BİLGİLERİ</h2>
+
+                    <div class="table-form ">
+
+                        <div class="row">
+                            <label style="float:left;"><input type="radio" name="Fatura2" checked class="Bireysel2" value="Bireysel2" />Bireysel Fatura</label>
+                            <label style="float:left;margin-left:30px;"><input type="radio" name="Fatura2" class="Kurumsal2" value="Kurumsal2" />Kurumsal Fatura</label>
+                        </div>
+
+                        <div class="row">
+                            
+                            <div class="col-xs-12 col-md-4">
+                                <div class="field-group">
+                                    <label>Adınız *</label>
+                                    <input type="text" class="le-input" id="fatura_Ad" data-placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-4">
+                                <div class="field-group">
+                                    <label>Soyadnız *</label>
+                                    <input type="text" class="le-input" id="fatura_Soyad" data-placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-4">
+                                <div class="field-group">
+                                    <label>E-Posta *</label>
+                                    <input type="text" class="le-input" id="fatura_E_posta" data-placeholder="">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-holder">
+                    <div class="table-form ">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-4">
+                                <div class="field-group">
+                                    <label class="lblfirma2">Firma Adı (Fatura) *</label>
+                                    <input type="text" class="le-input" id="fatura_Firma" data-placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-4">
+                                <div class="field-group">
+                                    <label class="lblfirma2">Vergi Dairesi *</label>
+                                    <input type="text" class="le-input" id="fatura_Vergi_Dairesi" data-placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-4">
+                                <div class="field-group">
+                                    <label class="lbltc">Vergi No/TC *</label>
+                                    <input type="number" maxlength="11" class="le-input" id="fatura_Vergi_No" data-placeholder="">
+                                    @*<input type="text" class="le-input" id="fatura_Vergi_No" data-placeholder="">*@
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-holder">
+
+                    <div class="table-form ">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-4">
+                                <div class="field-group">
+                                    <label>Cep Telefonu *</label>
+                                    <input type="text" class="le-input" id="fatura_GSM" data-placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-4">
+                                <div class="field-group">
+                                    <label>Telefon</label>
+                                    <input type="text" class="le-input" id="fatura_Telefon" data-placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-holder">
+                    <div class="table-form ">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-4">
+                                <div class="field-group">
+                                    <label>Şehir *</label>
+                                    @*@{Html.RenderAction("CityListPartial", "Checkout");}*@
+                                    @*<span id="sehirGetFatura" runat="server"></span>*@
+
+                                    <select name="Fatura_sehir" class="select" style="padding: 7px;" id="Fatura_sehir"></select>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-4">
+                                <div class="field-group">
+                                    <label>İlçe *</label>
+                                    <span id="resultilceFatura"> <select name="ilce" class="select" style="padding: 7px;" id="sehir2"> <option value="0"> İlçe </option></select> </span>
+
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-4">
+                                <div class="field-group">
+                                    <label>Adres *</label>
+                                    <textarea type="text" class="le-input" rows="3" id="fatura_Adres"> </textarea>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+    <input type="hidden" value="0" id="faturaSecili" />
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"> </script>
+
+    <script type="text/javascript">
+        $(function () {
+            getCity();
+            getCityTeslimat();
+        });
+
+
+        function getCity() {
+            var TableUrl1 = '@Url.Action("sehirGet", "Checkout")';
+            $.ajax({
+                type: "POST",
+                url: TableUrl1,
+                data: '{}',
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'JSON',
+                success: function (response) {
+                    $("#sehir").html(response.responseText);
+                }, error: function (response) {
+
+                }
+            });
+
+        }
+
+        function getCityTeslimat() {
+            var TableUrl1 = '@Url.Action("sehirGet", "Checkout")';
+            $.ajax({
+                type: "POST",
+                url: TableUrl1,
+                data: '{}',
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'JSON',
+                success: function (response) {
+                    $("#Fatura_sehir").html(response.responseText);
+
+                }, error: function (response) {
+
+                }
+            });
+
+        }
+        
+
+        $("#Fatura_sehir").change(function () {
+            var TableUrl = '@Url.Action("ilceler", "Checkout")';
+            var ilId = $("#Fatura_sehir").val();
+            $.ajax({
+                type: "POST",
+                url: TableUrl,
+                data: '{ilId:"' + ilId + '"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "JSON",
+                success: function (response) {
+                    $("#resultilceFatura").html(response.responseText);
+                }
+            });
+        });
+
+        $("#sehir").change(function () {
+            var TableUrl = '@Url.Action("ilceler", "Checkout")';
+            var ilId = $("#sehir").val();
+            $.ajax({
+                type: "POST",
+                url: TableUrl,
+                data: '{ilId:"' + ilId + '"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "JSON",
+                success: function (response) {
+                    $("#resultilce").html(response.responseText);
+                }
+            });
+        });
+
+
+    </script>
+
+    <script type="text/javascript">
+
+        $(function () {
+
+            $("#Vergi_No").keyup(function () {
+                var Vergi_No = $("#Vergi_No").val().length;
+                if (Vergi_No != 11) {
+                    $("#Vergi_No").addClass("bosGecme");
+                }
+                else {
+                    $("#Vergi_No").removeClass("bosGecme");
+                }
+            });
+
+            $("#Eposta").keyup(function () {
+                var eposta = $("#Eposta").val();
+                if (!validateEmail(eposta)) {
+                    $("#Eposta").addClass("bosGecme");
+                }
+                else {
+                    $("#Eposta").removeClass("bosGecme");
+                }
+            });
+
+            function validateEmail($email) {
+                var emailReg = /^([\w-\.]+([\w-]+\.)+[\w-]{2,4})?$/;
+                if (!emailReg.test($email)) {
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        });
+
+    </script>
+
+
+    <script type="text/javascript">
+        $(function () {
+            $(".alisverisi_tamamla").click(function () {
+                    var ad = $("#ad").val();
+                    var soyad = $("#soyad").val();
+                    var Eposta = $("#Eposta").val();
+                    var Firma = $("#Firma").val();
+                    var Vergi_Dairesi = $("#Vergi_Dairesi").val();
+                    var Vergi_No = $("#Vergi_No").val();
+                    var GSM = $("#GSM").val();
+                    var Telefon = $("#Telefon").val();
+                    var sehir = $("#sehir").val();
+                    var ilce = $("#sehir2").val();
+                    var adres = $("#adres").val();
+                    var not = $("#notAlalim").val();
+
+                    var fatura_Ad = $("#fatura_Ad").val();
+                    var fatura_Soyad = $("#fatura_Soyad").val();
+                    var fatura_E_posta = $("#fatura_E_posta").val();
+                    var fatura_Firma = $("#fatura_Firma").val();
+                    var fatura_Vergi_Dairesi = $("#fatura_Vergi_Dairesi").val();
+                    var fatura_Vergi_No = $("#fatura_Vergi_No").val();
+                    var fatura_GSM = $("#fatura_GSM").val();
+                    var fatura_Telefon = $("#fatura_Telefon").val();
+                    var fatura_Sehir = $("#Fatura_sehir").val();
+                    var fatura_Ilce = $("#ilce").val();
+                    var fatura_Adres = $("#fatura_Adres").val();
+
+                    if (fatura_Ad.trim() == "") {
+                        $("#fatura_Ad").addClass("bosGecme");
+                        $("body").animate({ scrollTop: "500" }, 1000);
+
+                    }
+                    else {
+                        $("#fatura_Ad").removeClass("bosGecme");
+                    }
+                    if (fatura_Soyad.trim() == "") {
+                        $("#fatura_Soyad").addClass("bosGecme");
+                    }
+                    else {
+                        $("#fatura_Soyad").removeClass("bosGecme");
+                    }
+                   
+                    if (fatura_Vergi_No.trim() == "") {
+                        $("#fatura_Vergi_No").addClass("bosGecme");
+                    }
+                    else {
+                        $("#fatura_Vergi_No").removeClass("bosGecme");
+                    }
+                    if (fatura_GSM.trim() == "") {
+                        $("#fatura_GSM").addClass("bosGecme");
+                    }
+                    else {
+                        $("#fatura_GSM").removeClass("bosGecme");
+                    }
+                    if (fatura_Sehir == "0") {
+                        $("#Fatura_sehir").addClass("bosGecme");
+                    }
+                    else {
+                        $("#Fatura_sehir").removeClass("bosGecme");
+                    }
+                    if (fatura_Ilce == "0") {
+                        $("#ilce").addClass("bosGecme");
+                    }
+                    else {
+                        $("#ilce").removeClass("bosGecme");
+                    }
+
+                    if (fatura_Adres.trim() == "") {
+                        $("#fatura_Adres").addClass("bosGecme");
+                    }
+                    else {
+                        $("#fatura_Adres").removeClass("bosGecme");
+                    }
+
+                    if (ad.trim() == "") {
+                        $("#ad").addClass("bosGecme");
+                    }
+                    else {
+                        $("#ad").removeClass("bosGecme");
+                    }
+                    if (soyad.trim() == "") {
+                        $("#soyad").addClass("bosGecme");
+                    }
+                    else {
+                        $("#soyad").removeClass("bosGecme");
+                    }
+                  
+                    if (Vergi_No.trim() == "") {
+                        $("#Vergi_No").addClass("bosGecme");
+                    }
+                    else {
+                        $("#Vergi_No").removeClass("bosGecme");
+                    }
+                    if (GSM.trim() == "") {
+                        $("#GSM").addClass("bosGecme");
+                    }
+                    else {
+                        $("#GSM").removeClass("bosGecme");
+                    }
+                    if (sehir == "0") {
+                        $("#sehir").addClass("bosGecme");
+                    }
+                    else {
+                        $("#sehir").removeClass("bosGecme");
+                    }
+                    if (ilce == "0") {
+                        $("#sehir2").addClass("bosGecme");
+                    }
+                    else {
+                        $("#sehir2").removeClass("bosGecme");
+                    }
+
+                    if (adres.trim() == "") {
+                        $("#adres").addClass("bosGecme");
+                    }
+                    else {
+                        $("#adres").removeClass("bosGecme");
+                    }
+                    var TableUrl = '@Url.Action("SetUye", "Checkout")';
+                if (ad.trim() != "" && soyad.trim() != "" && Eposta.trim() != "" && Vergi_No.trim() != "" && GSM.trim() != "" && sehir != "0" && ilce != "0" && adres.trim() != "" && fatura_Ad.trim() != "" && fatura_Soyad.trim() != "" && fatura_E_posta.trim() != "" && fatura_Vergi_No.trim() != "" && fatura_GSM.trim() != "" && fatura_Sehir.trim() != "" && fatura_Ilce.trim() != "" && fatura_Adres.trim() != "") {
+                        $.ajax({
+                            type: "POST",
+                            url: TableUrl,
+                            data: '{ad:"' + ad + '",soyad:"' + soyad + '",Eposta:"' + Eposta + '",Firma:"' + Firma + '",Vergi_Dairesi:"' + Vergi_Dairesi + '",Vergi_No:"' + Vergi_No + '",GSM:"' + GSM + '",Telefon:"' + Telefon + '",sehir:"' + sehir + '",ilce:"' + ilce + '",adres:"' + adres + '",not:"' + not + '",fatura_Ad:"' + fatura_Ad + '",fatura_Soyad:"' + fatura_Soyad + '",fatura_E_posta:"' + fatura_E_posta + '",fatura_Firma:"' + fatura_Firma + '",fatura_Vergi_Dairesi:"' + fatura_Vergi_Dairesi + '",fatura_Vergi_No:"' + fatura_Vergi_No + '",fatura_GSM:"' + fatura_GSM + '",fatura_Telefon:"' + fatura_Telefon + '",fatura_Sehir:"' + fatura_Sehir + '",fatura_Ilce:"' + fatura_Ilce + '",fatura_Adres:"' + fatura_Adres + '"}',
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: function (response) {
+                                window.location.href = '@Url.Action("Index", "Payment")';
+                            }
+                        });
+                    }
+                    else {
+
+                    }
+
+
+            });
+
+            function validateEmail($email) {
+                var emailReg = /^([\w-\.]+([\w-]+\.)+[\w-]{2,4})?$/;
+                if (!emailReg.test($email)) {
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+
+
+        });
+
+    </script>
+
+
+
+    <script type="text/javascript">
+        $(function () {
+
+            $("#Firma").hide();
+            $("#Vergi_Dairesi").hide();
+            $(".lblfirma").hide();
+
+            $(".Bireysel").click(function () {
+                $("#Firma").hide();
+                $("#Vergi_Dairesi").hide();
+                $("#Vergi_No").show();
+
+                $(".lblfirma").hide();
+
+            });
+
+            $(".Kurumsal").click(function () {
+                $("#Firma").show();
+                $("#Vergi_Dairesi").show();
+                $("#Vergi_No").show();
+                $(".lblfirma").show();
+            });
+        });
+
+        $(function () {
+
+            $("#fatura_Firma").hide();
+            $("#fatura_Vergi_Dairesi").hide();
+            $(".lblfirma2").hide();
+
+            $(".Bireysel2").click(function () {
+                $("#fatura_Firma").hide();
+                $("#fatura_Vergi_Dairesi").hide();
+                $("#fatura_Vergi_No").show();
+
+                $(".lblfirma2").hide();
+
+            });
+
+            $(".Kurumsal2").click(function () {
+                $("#fatura_Firma").show();
+                $("#fatura_Vergi_Dairesi").show();
+                $("#fatura_Vergi_No").show();
+
+                $(".lblfirma2").show();
+            });
+        });
+    </script>
+
+
+
+
+
+

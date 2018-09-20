@@ -1,0 +1,168 @@
+﻿
+@{
+    ViewBag.Title = "Admin-Anasayfa";
+    Layout = "~/Areas/admin/Views/Shared/_adminLayoutPage.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href="Index">Anasayfa</a>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <h1>
+            <span aria-hidden="true" class="icon icon-grid-big"></span>
+            <span class="main-text">
+                Üye Raporları
+            </span>
+        </h1>
+    </div>
+    <div class="col-md-6">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6 col-md-3">
+        <div class="c-widget c-widget-quick-info c-widget-size-small highlight-color-blue" data-url="pages-profile.html">
+            <div class="c-widget-icon">
+                <span class="icon icon-user"></span>
+            </div>
+            <div class="c-wdiget-content-block">
+                <div class="c-widget-content-heading">
+                    1
+                </div>
+                <div class="c-widget-content-sub">
+                    Online Olanlar
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="c-widget c-widget-quick-info c-widget-size-small highlight-color-green" data-url="#">
+            <div class="c-widget-icon">
+                <span class="icon icon-dollar"></span>
+            </div>
+            <div class="c-wdiget-content-block">
+                <div class="c-widget-content-heading">
+                    50,26 $
+                </div>
+                <div class="c-widget-content-sub">
+                    Bugünki Satışlar
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="c-widget c-widget-quick-info c-widget-size-small highlight-color-red" data-url="#">
+            <div class="c-widget-icon">
+                <span class="icon icon-list-circle"></span>
+            </div>
+            <div class="c-wdiget-content-block">
+                <div class="c-widget-content-heading">
+                    14
+                </div>
+                <div class="c-widget-content-sub">
+                    Tüm Ziyaretçiler
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="c-widget c-widget-quick-info c-widget-size-small highlight-color-yellow" data-url="#">
+            <div class="c-widget-icon">
+                <span class="icon icon-chat"></span>
+            </div>
+            <div class="c-wdiget-content-block">
+                <div class="c-widget-content-heading">
+                    16
+                </div>
+                <div class="c-widget-content-sub">
+                    Müşteri Yorumları
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- START Block: Overview Graph -->
+                <div class="block overview-block">
+                    <div class="block-heading">
+                        <div class="main-text h2">
+                            Ziyaretciler
+                        </div>
+                        <div class="block-controls">
+                            <span aria-hidden="true" class="icon icon-cross icon-size-medium block-control-remove"></span>
+                            <span aria-hidden="true" class="icon icon-arrow-down icon-size-medium block-control-collapse"></span>
+                        </div>
+                    </div>
+                    <div class="block-content-outer">
+                        <div class="block-content-inner">
+                            <div class="graph-range">
+                                <form role="form" class="form-inline">
+                                    <div class="form-group graph-controls">
+                                        <label for="date-range-select" class="control-label">Tarih Aralığı</label>
+                                        <select class="date-range-select form-control input-sm" id="date-range-select">
+                                            <option value="today">Bugün</option>
+                                            <option value="yesterday">Dün</option>
+                                            <option value="this_week">Bu hafta</option>
+                                            <option value="last_week">Geçen hafta</option>
+                                            <option value="this_month">Bu Ay</option>
+                                            <option value="this_year" selected="selected">Bu Yıl</option>
+                                            <option value="last_year">Geçen Yıl</option>
+                                            <option value="custom">Özel</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group graph-controls">
+                                        <div class="date-picker-connected">
+                                            <div class="input-group input-group-sm date-picker-start">
+                                                <input type="text" class="form-control" autocomplete="off" size="10" placeholder="DD/MM/YYYY" data-date-format="DD/MM/YYYY">
+                                                <span class="input-group-addon input-group-icon">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div>
+                                            to
+                                            <div class="input-group input-group-sm date-picker-end">
+                                                <input type="text" class="form-control" autocomplete="off" size="10" placeholder="DD/MM/YYYY" data-date-format="DD/MM/YYYY">
+                                                <span class="input-group-addon input-group-icon">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div>
+                                            <a class="btn btn-info btn-sm">
+                                                <span class="glyphicon glyphicon-refresh"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="form-group graph-controls">
+                                        <label for="overview-order-status" class="control-label">Sipariş Durumları</label>
+                                        <select class="form-control input-sm" id="overview-order-status">
+                                            <option value="all">Hepsi</option>
+                                            <option value="canceled">İptal edildi</option>
+                                            <option value="complete">Tamamlandı</option>
+                                            <option value="denied">Reddedildi</option>
+                                            <option value="pending">Beklemede</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id="overview" class="graph graph-size-normal" data-graph-colors="#4596f1,#f17d45"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END Block: Overview Graph -->
+            </div>
+        
+        </div>
+        
+    </div>
+    
+</div>
+

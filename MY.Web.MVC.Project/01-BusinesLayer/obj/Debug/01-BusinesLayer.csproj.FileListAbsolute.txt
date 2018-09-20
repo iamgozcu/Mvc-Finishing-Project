@@ -1,0 +1,27 @@
+C:\Users\GhettoBwoy\Documents\GitHub\MY.Web.MVC.Project\01-BusinesLayer\bin\Debug\01-BusinesLayer.dll
+C:\Users\GhettoBwoy\Documents\GitHub\MY.Web.MVC.Project\01-BusinesLayer\bin\Debug\01-BusinesLayer.pdb
+C:\Users\GhettoBwoy\Documents\GitHub\MY.Web.MVC.Project\01-BusinesLayer\obj\Debug\01-BusinesLayer.csprojResolveAssemblyReference.cache
+C:\Users\GhettoBwoy\Documents\GitHub\MY.Web.MVC.Project\01-BusinesLayer\obj\Debug\01-BusinesLayer.dll
+C:\Users\GhettoBwoy\Documents\GitHub\MY.Web.MVC.Project\01-BusinesLayer\obj\Debug\01-BusinesLayer.pdb
+C:\Users\GhettoBwoy\Documents\GitHub\MY.Web.MVC.Project\01-BusinesLayer\bin\Debug\01-BusinesLayer.dll.config
+C:\Users\GhettoBwoy\Documents\GitHub\MY.Web.MVC.Project\01-BusinesLayer\bin\Debug\00-DataAccessLayer.dll
+C:\Users\GhettoBwoy\Documents\GitHub\MY.Web.MVC.Project\01-BusinesLayer\bin\Debug\EntityFramework.dll
+C:\Users\GhettoBwoy\Documents\GitHub\MY.Web.MVC.Project\01-BusinesLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\GhettoBwoy\Documents\GitHub\MY.Web.MVC.Project\01-BusinesLayer\bin\Debug\00-DataAccessLayer.pdb
+C:\Users\GhettoBwoy\Documents\GitHub\MY.Web.MVC.Project\01-BusinesLayer\bin\Debug\EntityFramework.xml
+C:\Users\GhettoBwoy\Documents\GitHub\MY.Web.MVC.Project\01-BusinesLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Muhammed\Desktop\MY.Web.MVC.Project (1)\MY.Web.MVC.Project\01-BusinesLayer\bin\Debug\01-BusinesLayer.dll.config
+C:\Users\Muhammed\Desktop\MY.Web.MVC.Project (1)\MY.Web.MVC.Project\01-BusinesLayer\bin\Debug\01-BusinesLayer.dll
+C:\Users\Muhammed\Desktop\MY.Web.MVC.Project (1)\MY.Web.MVC.Project\01-BusinesLayer\bin\Debug\01-BusinesLayer.pdb
+C:\Users\Muhammed\Desktop\MY.Web.MVC.Project (1)\MY.Web.MVC.Project\01-BusinesLayer\bin\Debug\00-DataAccessLayer.dll
+C:\Users\Muhammed\Desktop\MY.Web.MVC.Project (1)\MY.Web.MVC.Project\01-BusinesLayer\bin\Debug\EntityFramework.dll
+C:\Users\Muhammed\Desktop\MY.Web.MVC.Project (1)\MY.Web.MVC.Project\01-BusinesLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Muhammed\Desktop\MY.Web.MVC.Project (1)\MY.Web.MVC.Project\01-BusinesLayer\bin\Debug\00-DataAccessLayer.pdb
+C:\Users\Muhammed\Desktop\MY.Web.MVC.Project (1)\MY.Web.MVC.Project\01-BusinesLayer\bin\Debug\00-DataAccessLayer.dll.config
+C:\Users\Muhammed\Desktop\MY.Web.MVC.Project (1)\MY.Web.MVC.Project\01-BusinesLayer\bin\Debug\EntityFramework.xml
+C:\Users\Muhammed\Desktop\MY.Web.MVC.Project (1)\MY.Web.MVC.Project\01-BusinesLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Muhammed\Desktop\MY.Web.MVC.Project (1)\MY.Web.MVC.Project\01-BusinesLayer\obj\Debug\01-BusinesLayer.csprojResolveAssemblyReference.cache
+C:\Users\Muhammed\Desktop\MY.Web.MVC.Project (1)\MY.Web.MVC.Project\01-BusinesLayer\obj\Debug\01-BusinesLayer.csproj.CoreCompileInputs.cache
+C:\Users\Muhammed\Desktop\MY.Web.MVC.Project (1)\MY.Web.MVC.Project\01-BusinesLayer\obj\Debug\01-BusinesLayer.csproj.CopyComplete
+C:\Users\Muhammed\Desktop\MY.Web.MVC.Project (1)\MY.Web.MVC.Project\01-BusinesLayer\obj\Debug\01-BusinesLayer.dll
+C:\Users\Muhammed\Desktop\MY.Web.MVC.Project (1)\MY.Web.MVC.Project\01-BusinesLayer\obj\Debug\01-BusinesLayer.pdb

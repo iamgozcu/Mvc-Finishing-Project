@@ -1,0 +1,10 @@
+﻿@model List<_00_DataAccessLayer.Entity.Brand>
+
+@foreach (var item in Model)
+{
+    <div class="brand-item">
+        <a href="#">
+            <img alt="" width="158" height="33" src="~/Content/images/brands/@item.BrandImage" />
+        </a>
+    </div>
+}

@@ -1,0 +1,535 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MYProjectDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Administrators">
+    <Key>
+      <PropertyRef Name="AdminId" />
+    </Key>
+    <Property Name="AdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" />
+    <Property Name="EmailAdress" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="Role" Type="int" />
+    <Property Name="Path" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Banks">
+    <Key>
+      <PropertyRef Name="BankId" />
+    </Key>
+    <Property Name="BankId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BankName" Type="nvarchar" MaxLength="50" />
+    <Property Name="BankImage" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountOwner" Type="nvarchar" MaxLength="50" />
+    <Property Name="BranchName" Type="nvarchar" MaxLength="50" />
+    <Property Name="BranchCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountType" Type="nvarchar" MaxLength="50" />
+    <Property Name="IbanNo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Baskets">
+    <Key>
+      <PropertyRef Name="BasketId" />
+    </Key>
+    <Property Name="BasketId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BasketDealerId" Type="int" />
+    <Property Name="BasketProductd" Type="int" />
+    <Property Name="BasketPiece" Type="int" />
+    <Property Name="BasketAmount" Type="nvarchar" MaxLength="50" />
+    <Property Name="BasketShortDscription" Type="nvarchar(max)" />
+    <Property Name="BasketCargo" Type="nvarchar" MaxLength="50" />
+    <Property Name="BasketProductDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Brands">
+    <Key>
+      <PropertyRef Name="BrandId" />
+    </Key>
+    <Property Name="BrandId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BrandName" Type="nvarchar" MaxLength="50" />
+    <Property Name="BrandImage" Type="nvarchar" MaxLength="250" />
+    <Property Name="ActivePassive" Type="int" />
+    <Property Name="Sorting" Type="int" />
+  </EntityType>
+  <EntityType Name="Busines">
+    <Key>
+      <PropertyRef Name="BusinessId" />
+    </Key>
+    <Property Name="BusinessId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BusinessName" Type="nvarchar" MaxLength="50" />
+    <Property Name="BusinessAdres1" Type="nvarchar(max)" />
+    <Property Name="BusinessAdres2" Type="nvarchar(max)" />
+    <Property Name="BusinessAdres3" Type="nvarchar(max)" />
+    <Property Name="BusinessPostCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="BusinessTelNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailAdres" Type="nvarchar" MaxLength="50" />
+    <Property Name="Passwords" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="VatNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrimaryContact" Type="nvarchar" MaxLength="50" />
+    <Property Name="SecondaryContact" Type="nvarchar" MaxLength="50" />
+    <Property Name="BusinesType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Other" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tobacconist" Type="nvarchar" MaxLength="50" />
+    <Property Name="AreYou18" Type="nvarchar" MaxLength="50" />
+    <Property Name="Depot" Type="nvarchar" MaxLength="50" />
+    <Property Name="BankName" Type="nvarchar" MaxLength="50" />
+    <Property Name="BankAdres1" Type="nvarchar(max)" />
+    <Property Name="BankAdres2" Type="nvarchar(max)" />
+    <Property Name="BankAdres3" Type="nvarchar(max)" />
+    <Property Name="BankPostCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="SortCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Requirements" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="int" />
+    <Property Name="Token" Type="nvarchar" MaxLength="50" />
+    <Property Name="Balance" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CargoDetails">
+    <Key>
+      <PropertyRef Name="CargoDesiId" />
+    </Key>
+    <Property Name="CargoDesiId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CargoParentId" Type="int" />
+    <Property Name="CargoDesiValue" Type="int" />
+    <Property Name="CargoDesiPrice" Type="nvarchar" MaxLength="50" />
+    <Property Name="CargoDesiCityId" Type="int" />
+  </EntityType>
+  <EntityType Name="Cargos">
+    <Key>
+      <PropertyRef Name="CargoId" />
+    </Key>
+    <Property Name="CargoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CargoName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CargoImage" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CargoTrackings">
+    <Key>
+      <PropertyRef Name="CargoTrackingId" />
+    </Key>
+    <Property Name="CargoTrackingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CargoTrackingNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="CargoTrackingLink" Type="nvarchar(max)" />
+    <Property Name="OrderId" Type="int" />
+    <Property Name="OrderDetailId" Type="int" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="SubCategoryId" Type="int" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CategoryHit" Type="int" />
+    <Property Name="CategoryImage" Type="nvarchar" MaxLength="50" />
+    <Property Name="CategoryTitle" Type="nvarchar(max)" />
+    <Property Name="CategoryDesc" Type="nvarchar(max)" />
+    <Property Name="CategoryKeyw" Type="nvarchar(max)" />
+    <Property Name="CategoryBanner" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'MYProjectDB.dbo.Cities' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Cities">
+          <Property Name="CityId" Type="int" />
+          <Property Name="ProvincialIdentificationNo" Type="int" />
+          <Property Name="CityName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountryId" Type="int" />
+        </EntityType>-->
+  <EntityType Name="Companies">
+    <Key>
+      <PropertyRef Name="CompanyId" />
+    </Key>
+    <Property Name="CompanyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanySeo" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyName" Type="nvarchar(max)" />
+    <Property Name="CompanySurname" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyPassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyImage" Type="nvarchar(max)" />
+    <Property Name="CompanyDescription" Type="text" />
+    <Property Name="CompanyFacebook" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyTwitter" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyGoogle" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyCountry" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyCity" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyCounty" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyDistrict" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyStreet" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyAddress" Type="nvarchar(max)" />
+    <Property Name="CompanyNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyGsm" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyWeb" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyMap" Type="nvarchar(max)" />
+    <Property Name="CompanyActive" Type="bit" />
+    <Property Name="CompanyHit" Type="int" />
+    <Property Name="CompanyPaid" Type="bit" />
+    <Property Name="CompanyRegistration" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanySector" Type="int" />
+  </EntityType>
+  <EntityType Name="ContentPages">
+    <Key>
+      <PropertyRef Name="PageId" />
+    </Key>
+    <Property Name="PageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PageName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PageContent" Type="nvarchar(max)" />
+    <Property Name="PageImage" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'MYProjectDB.dbo.Counties' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Counties">
+          <Property Name="CountyId" Type="int" />
+          <Property Name="KimlikNo" Type="int" />
+          <Property Name="CountyName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProvincialIdentificationNo" Type="int" />
+        </EntityType>-->
+  <EntityType Name="CustomerDetails">
+    <Key>
+      <PropertyRef Name="CustomerDetailId" />
+    </Key>
+    <Property Name="CustomerDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerDetailName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomerDetailSurname" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailAdress" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddressName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="250" />
+    <Property Name="TaxAdministration" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaxNumber" Type="char" MaxLength="11" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="GSM" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="CityId" Type="int" />
+    <Property Name="DistrictId" Type="int" />
+    <Property Name="CustomerId" Type="int" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomerSurname" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="MembershipDate" Type="datetime" />
+    <Property Name="ActivePassive" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'MYProjectDB.dbo.Districts' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Districts">
+          <Property Name="DistrictId" Type="int" />
+          <Property Name="DistrictIdNumber" Type="int" />
+          <Property Name="BucakIdNumber" Type="int" />
+          <Property Name="TownIdNumber" Type="int" />
+          <Property Name="IdNumber" Type="int" />
+          <Property Name="TownName" Type="nvarchar(max)" />
+        </EntityType>-->
+  <EntityType Name="FilterDetails">
+    <Key>
+      <PropertyRef Name="FilterDetailId" />
+    </Key>
+    <Property Name="FilterDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FilterDetailTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="FilterId" Type="int" />
+  </EntityType>
+  <EntityType Name="FilterProducts">
+    <Key>
+      <PropertyRef Name="FilterProductId" />
+    </Key>
+    <Property Name="FilterProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FilterDetailId" Type="int" />
+    <Property Name="ProductId" Type="int" />
+  </EntityType>
+  <EntityType Name="Filters">
+    <Key>
+      <PropertyRef Name="FilterId" />
+    </Key>
+    <Property Name="FilterId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FilterTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="CategoryId" Type="int" />
+  </EntityType>
+  <EntityType Name="LeftBanners">
+    <Key>
+      <PropertyRef Name="LeftBannerId" />
+    </Key>
+    <Property Name="LeftBannerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SliderImage" Type="nvarchar" MaxLength="250" />
+    <Property Name="SliderUrl" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="OrderDetails">
+    <Key>
+      <PropertyRef Name="OrderDetailId" />
+    </Key>
+    <Property Name="OrderDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderTopId" Type="int" />
+    <Property Name="OrderDetailProductId" Type="int" />
+    <Property Name="OrderDetailProductImage" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderDetailProductName" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderDetailProductPrice" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderDetailProductPiece" Type="int" />
+    <Property Name="OrderDetailProductKdv" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderDetailProductStatus" Type="int" />
+    <Property Name="OrderDetailProductDiscount" Type="int" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderDeliveryDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderStatu" Type="int" />
+    <Property Name="OrderPaymentOptionDepositCard" Type="int" />
+    <Property Name="OrderPaymentCard" Type="int" />
+    <Property Name="OrderPaymentCardResult" Type="nvarchar(max)" />
+    <Property Name="OrderPaymentStructuredIp" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderPaymentCardPin" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderPaymentInstallmentNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderTotalVAT" Type="nvarchar" MaxLength="50" />
+    <Property Name="PriceExcludingOrderVAT" Type="nvarchar" MaxLength="50" />
+    <Property Name="PriceIncludingOrderTotalVAT" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderTotalCargoPrice" Type="nvarchar" MaxLength="50" />
+    <Property Name="TotalOrder" Type="int" />
+    <Property Name="OrderMemberId" Type="int" />
+    <Property Name="OrderMemberName" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderMemberSurname" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderMemberEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderMemberCompany" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderMemberTaxOffice" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderMemberTaxNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderMemberGsm" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderMemberPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderMemberCity" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderMemberCounty" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderMemberAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderNote" Type="nvarchar(max)" />
+    <Property Name="OrderInvoiceName" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderInvoiceSurname" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderInvoiceEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderInvoiceCompany" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderInvoiceTaxAdministration" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderInvoiceTaxNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderInvoiceGsm" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderInvoicePhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderInvoiceCity" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderInvoiceCounty" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderInvoiceAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderInvoiceTrackingNumber" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OrderStatusies">
+    <Key>
+      <PropertyRef Name="OrderStatuId" />
+    </Key>
+    <Property Name="OrderStatuId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderStatu" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderStatuColor" Type="nvarchar" MaxLength="50" />
+    <Property Name="ActivePassive" Type="bit" />
+  </EntityType>
+  <EntityType Name="ProductFilters">
+    <Key>
+      <PropertyRef Name="ProductFilterId" />
+    </Key>
+    <Property Name="ProductFilterId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="int" />
+    <Property Name="FilterId" Type="int" />
+  </EntityType>
+  <EntityType Name="ProductImages">
+    <Key>
+      <PropertyRef Name="ImageId" />
+    </Key>
+    <Property Name="ImageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Path" Type="nvarchar" MaxLength="500" />
+    <Property Name="ProductId" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductName" Type="nvarchar(max)" />
+    <Property Name="ProductPrice" Type="money" />
+    <Property Name="ReferralPrice" Type="money" />
+    <Property Name="Rsp" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProductShortDescription" Type="nvarchar(max)" />
+    <Property Name="CreatedDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="BrandId" Type="int" />
+    <Property Name="ProductCategory" Type="int" />
+    <Property Name="ProductDescription" Type="text" />
+    <Property Name="ProductActive" Type="int" />
+    <Property Name="ProductHit" Type="int" />
+    <Property Name="Sku" Type="nvarchar" MaxLength="50" />
+    <Property Name="Stock" Type="int" />
+    <Property Name="WatCode" Type="int" />
+    <Property Name="ProductCriterion" Type="int" />
+    <Property Name="EndDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="SpeacilPrice" Type="money" />
+    <Property Name="MustStockLine" Type="bit" />
+    <Property Name="Por" Type="nvarchar" MaxLength="50" />
+    <Property Name="BarcodeCode1" Type="nvarchar(max)" />
+    <Property Name="BarcodeCode2" Type="nvarchar(max)" />
+    <Property Name="BarcodeCode3" Type="nvarchar(max)" />
+    <Property Name="UpdateDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="CargoPrice" Type="int" />
+    <Property Name="Sahibinden" Type="int" Nullable="false" />
+    <Property Name="N11" Type="int" />
+  </EntityType>
+  <EntityType Name="Sectors">
+    <Key>
+      <PropertyRef Name="SectorId" />
+    </Key>
+    <Property Name="SectorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SectorName" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MYProjectDB.dbo.Settings' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Settings">
+    <Key>
+      <PropertyRef Name="SettingId" />
+    </Key>
+    <Property Name="SettingId" Type="int" Nullable="false" />
+    <Property Name="BasketLimitKeeps" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderEmailAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactMailAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="PostCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Map" Type="nvarchar(max)" />
+    <Property Name="CompanyNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Slogan" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ShowcaseCompanies">
+    <Key>
+      <PropertyRef Name="VitrinId" />
+    </Key>
+    <Property Name="VitrinId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirmaId" Type="int" />
+    <Property Name="VitrinSira" Type="int" />
+  </EntityType>
+  <EntityType Name="ShowcaseProducts">
+    <Key>
+      <PropertyRef Name="ShowcaseProductId" />
+    </Key>
+    <Property Name="ShowcaseProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="int" />
+    <Property Name="ShowcaseProductSort" Type="int" />
+    <Property Name="ShowcaseProductTopId" Type="int" />
+  </EntityType>
+  <EntityType Name="Showcases">
+    <Key>
+      <PropertyRef Name="ShowcaseId" />
+    </Key>
+    <Property Name="ShowcaseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShowcaseName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShowcaseSortNumber" Type="int" />
+  </EntityType>
+  <EntityType Name="Sliders">
+    <Key>
+      <PropertyRef Name="SliderId" />
+    </Key>
+    <Property Name="SliderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SliderImage" Type="nvarchar" MaxLength="250" />
+    <Property Name="SliderUrl" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'MYProjectDB.dbo.Stats' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Stats">
+          <Property Name="IP" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tarih" Type="smalldatetime" />
+          <Property Name="Sayfa" Type="nvarchar" MaxLength="50" />
+          <Property Name="Referer" Type="nvarchar" MaxLength="50" />
+          <Property Name="Dil" Type="nvarchar(max)" />
+        </EntityType>-->
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="VirtualPosBanks">
+    <Key>
+      <PropertyRef Name="BankId" />
+    </Key>
+    <Property Name="BankId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BankCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="BankName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Bank3DLink" Type="nvarchar(max)" />
+    <Property Name="BankMemberId" Type="nvarchar" MaxLength="50" />
+    <Property Name="BankAnswer" Type="nvarchar(max)" />
+    <Property Name="Bank3DSecurity" Type="nvarchar" MaxLength="50" />
+    <Property Name="BankImage" Type="nvarchar" MaxLength="50" />
+    <Property Name="BankAktivePassive" Type="bit" />
+    <Property Name="BankaSort" Type="int" />
+  </EntityType>
+  <EntityType Name="VirtualPosInstallments">
+    <Key>
+      <PropertyRef Name="InstallmentId" />
+    </Key>
+    <Property Name="InstallmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BankId" Type="int" />
+    <Property Name="NumberOfInstallment" Type="int" />
+    <Property Name="InstallmentRate" Type="nvarchar" MaxLength="50" />
+    <Property Name="ActivePassive" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="MYProjectDBModelStoreContainer">
+    <EntitySet Name="Administrators" EntityType="Self.Administrators" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Banks" EntityType="Self.Banks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Baskets" EntityType="Self.Baskets" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Brands" EntityType="Self.Brands" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Busines" EntityType="Self.Busines" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CargoDetails" EntityType="Self.CargoDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cargos" EntityType="Self.Cargos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CargoTrackings" EntityType="Self.CargoTrackings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Companies" EntityType="Self.Companies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContentPages" EntityType="Self.ContentPages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerDetails" EntityType="Self.CustomerDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FilterDetails" EntityType="Self.FilterDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FilterProducts" EntityType="Self.FilterProducts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Filters" EntityType="Self.Filters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LeftBanners" EntityType="Self.LeftBanners" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderStatusies" EntityType="Self.OrderStatusies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductFilters" EntityType="Self.ProductFilters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductImages" EntityType="Self.ProductImages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sectors" EntityType="Self.Sectors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ShowcaseCompanies" EntityType="Self.ShowcaseCompanies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ShowcaseProducts" EntityType="Self.ShowcaseProducts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Showcases" EntityType="Self.Showcases" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sliders" EntityType="Self.Sliders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VirtualPosBanks" EntityType="Self.VirtualPosBanks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VirtualPosInstallments" EntityType="Self.VirtualPosInstallments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Settings" EntityType="Self.Settings" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Settings].[SettingId] AS [SettingId], 
+    [Settings].[BasketLimitKeeps] AS [BasketLimitKeeps], 
+    [Settings].[OrderEmailAddress] AS [OrderEmailAddress], 
+    [Settings].[ContactMailAddress] AS [ContactMailAddress], 
+    [Settings].[Address] AS [Address], 
+    [Settings].[PostCode] AS [PostCode], 
+    [Settings].[CompanyName] AS [CompanyName], 
+    [Settings].[Phone] AS [Phone], 
+    [Settings].[Phone2] AS [Phone2], 
+    [Settings].[Map] AS [Map], 
+    [Settings].[CompanyNumber] AS [CompanyNumber], 
+    [Settings].[Slogan] AS [Slogan]
+    FROM [dbo].[Settings] AS [Settings]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

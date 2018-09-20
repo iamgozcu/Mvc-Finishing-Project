@@ -1,0 +1,32 @@
+﻿@model _00_DataAccessLayer.Entity.ContentPage
+@{
+    ViewBag.Title = Model.PageName;
+    Layout = "~/Views/Shared/_userLayoutPage.cshtml";
+}
+
+<section id="banners-mosaic">
+    <div class="container no-padding mosaic-holder">
+        <div class="col-xs-12 col-md-12">
+            @if (Model.PageName != null)
+            {
+                <h1>@Model.PageName</h1>
+            }
+
+            <br />
+            <br />
+                @if (Model.PageImage != null)
+                {
+                    <img src="~/Content/images/content-page/@Model.PageImage" style="width:100%" />
+                }
+            <br />
+            <br />
+            <p>
+                @if (Model.PageContent != null)
+                {
+                   @Model.PageContent
+                }
+               
+            </p>
+        </div>
+    </div>
+</section>

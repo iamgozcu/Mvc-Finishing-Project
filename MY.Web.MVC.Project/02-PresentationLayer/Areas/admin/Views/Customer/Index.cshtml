@@ -1,0 +1,103 @@
+﻿@model List<_00_DataAccessLayer.Entity.Customer>
+@{
+    ViewBag.Title = "Müşteriler";
+    Layout = "~/Areas/admin/Views/Shared/_adminLayoutPage.cshtml";
+}
+@section css{
+    <link type="text/css" href="~/Areas/admin/Content/assets/css/optional/switchery.min.css" rel="stylesheet" />
+    <link type="text/css" href="~/Areas/admin/Content/assets/css/optional/powerange.min.css" rel="stylesheet" />
+    <link type="text/css" href="~/Areas/admin/Content/assets/css/optional/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+    <link type="text/css" href="~/Areas/admin/Content/assets/css/optional/bootstrap-tagsinput.min.css" rel="stylesheet" />
+    <link type="text/css" href="~/Areas/admin/Content/assets/css/optional/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link type="text/css" href="~/Areas/admin/Content/assets/css/optional/bootstrap-multiselect.min.css" rel="stylesheet" />
+    <link type="text/css" href="~/Areas/admin/Content/assets/css/demo-files/form-extras.css" rel="stylesheet" />
+}
+<div class="row">
+    <div class="col-xs-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href='@Url.Action("Index", "Home", null, Request.Url.Scheme)'>Anasayfa</a>
+            </li>
+            <li class="active">
+                <a href='@Url.Action("Index", "Customer", null, Request.Url.Scheme)'>Müşteriler</a>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <h1>
+            <span aria-hidden="true" class="icon icon-grids"></span>
+            <span class="main-text">
+                Müşteriler
+            </span>
+        </h1>
+    </div>
+    <div class="col-md-6">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="block">
+
+            <div class="block-content-outer">
+                <div class="block-content-inner">
+                    <div class="table-responsive">
+                        <table id="datatable-1" class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Adı Soyadı</th>
+                                    <th>E-Posta</th>
+                                    <th>Üyelik Tarihi</th>
+                                    <th>Aktif Pasif</th>
+                                    <th>Detay</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+
+                                    <tr>
+                                        <td>@item.CustomerName @item.CustomerSurname</td>
+                                        <td>@item.EmailAddress</td>
+                                        <td>@item.MembershipDate</td>
+                                        @if (item.ActivePassive != false)
+                                        {
+
+                                            <td>
+                                                <span class="label label-success">Aktif</span>
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                <span class="label label-danger">Pasif</span>
+                                            </td>
+                                        }
+                                        <td><a href="@Url.Action("Detail", "Customer", new { id = item.CustomerId })">Detay</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/jquery.mask.min.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/switchery.min.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/powerange.min.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/jquery.bootstrap-touchspin.min.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/bootstrap-tagsinput.min.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/misc/typeahead.bundle.min.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/misc/moment.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/bootstrap-multiselect.min.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/optional/ckeditor/adapters/jquery.js"></script>
+    <script type="text/javascript" src="~/Areas/admin/Content/assets/js/demo-files/form-extras.js"></script>
+}

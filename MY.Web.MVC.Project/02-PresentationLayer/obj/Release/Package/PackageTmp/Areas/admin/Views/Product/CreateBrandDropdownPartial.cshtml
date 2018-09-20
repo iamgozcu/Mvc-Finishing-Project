@@ -1,0 +1,4 @@
+﻿@model _00_DataAccessLayer.Entity.Brand
+ <label for="input-demo-n-1">Marka Seçiniz</label>
+ @Html.DropDownListFor(model => model.BrandId, new SelectList(ViewBag.BrandList, "BrandId", "BrandName"), new { @class = "form-control rounded" })
+

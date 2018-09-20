@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Anasayfa";
+    Layout = "~/Views/Shared/_userLayoutPage.cshtml";
+}
+
+<section id="banners-mosaic">
+    @{Html.RenderAction("DefaultBannerPartial", "Banner"); }
+</section>
+
+@{Html.RenderAction("ShowcaseProductListPartial", "Home"); }
+

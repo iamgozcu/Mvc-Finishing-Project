@@ -1,0 +1,12 @@
+﻿@model List<_00_DataAccessLayer.Entity.Slider>
+
+@foreach (var item in Model)
+{
+    <div class="item">
+        <a href="@item.SliderUrl">
+
+            <img src="~/Content/images/slider/@item.SliderImage" alt="">
+
+        </a>
+    </div>
+}

@@ -1,0 +1,234 @@
+﻿@model List<_00_DataAccessLayer.ViewModel.ProductDetailListModel>
+@{
+    ViewBag.Title = "Ürün Detay";
+    Layout = "~/Views/Shared/_userLayoutPage.cshtml";
+}
+
+
+<section id="breadcrumb">
+
+    <div class="container">
+        <div class="le-breadcrumb inline">
+            <div class="iconic-nav-bar">
+                <div class="icon-holder">
+                    <i class="fa fa-chain"></i>
+                    <span class="triangle"></span>
+                </div>
+                <div class="bar">
+                    <ul>
+                        <li><a href="@Url.Action("Index", "Home", new { id = UrlParameter.Optional })">Anasayfa</a></li>
+                        <li class="active">Ürün Detay</li>
+                    </ul>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@foreach (var item in Model)
+{
+
+
+    <section id="single-product-wide" class="page-holder full-width">
+        <div class="container">
+
+
+            <div class="col-xs-12">
+
+
+
+                <div id="single-product" class="row">
+                    <div class="no-margin col-xs-12 col-sm-5 gallery-holder">
+                        <div class="product-item-holder size-big single-product-gallery small-gallery">
+                            <div class="icon-holder small">
+                                <i class="fa fa-search-plus "></i>
+                                <span class="triangle"></span>
+                            </div>
+
+                            <div class="single-product-slider">
+                                @{
+                                    int slide = 0;
+                                    foreach (var item1 in item.ProductImage)
+                                    {
+                                        slide++;
+                                        <div class="single-product-gallery-item" id="slide-@slide">
+                                            <a data-rel="prettyphoto" href="~/Content/images/products/@item1.Path">
+                                                <img class="lazy" alt="" src="~/Content/images/products/@item1.Path" />
+
+                                            </a>
+                                        </div>
+                                    }
+                                }
+
+                            </div>
+
+
+                            <div class="gallery-thumbs">
+
+
+                                <ul>
+                                    @{
+                                        int slider = 0;
+                                        foreach (var item2 in item.ProductImage)
+                                        {
+                                            slider++;
+                                            <li class="active">
+                                                <a class="horizontal-thumb" href="#slide-@slider">
+                                                    <img class="lazy" width="100%" height="100%" alt="" src="~/Content/images/products/@item2.Path" />
+                                                </a>
+                                            </li>
+                                        }
+                                    }
+
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="no-margin col-xs-12 col-sm-7 body-holder">
+                        <div class="body">
+                            <div class="star-holder">
+                                <div class="star" data-score="3"></div>
+                            </div>
+                            <h3>@item.Product.ProductName</h3>
+                            <h3>@item.Product.ProductPrice.ToString("C")</h3>
+
+
+                            <span>
+                                <strong>Marka </strong>:
+                                <a href="javascript:;">
+                                    <span>@item.Brand.BrandName</span>
+                                </a>
+                            </span>
+
+                            <br />
+                            <br />
+
+                            <span>
+                                <strong>Stok Kodu </strong>:
+                                <a href="javascript:;">
+                                    <span>@item.Product.Sku</span>
+                                </a>
+                            </span>
+
+                            <br />
+                            <br />
+
+                            <span>
+                                <strong>Stok Mikratı </strong>:
+                                <a href="javascript:;">
+                                    <span>@item.Product.Stock</span>
+                                </a>
+                            </span>
+
+                            <br />
+                            <br />
+
+                            <span>
+                                <strong>Tedarikçi Açıklaması </strong>:
+                                <a href="javascript:;">
+                                    <span>@item.Product.ProductShortDescription</span>
+                                </a>
+                            </span>
+
+                            <br />
+                            <br />
+
+
+                            <div class="buttons-holder">
+
+                                <div class="inline qnt-holder">
+                                    <div class="le-quantity">
+
+                                        <a class="minus" href="#reduce"></a>
+                                        <input name="quantity" readonly="readonly" id="urunDetaySepetAdet" type="text" value="1" />
+                                        <a class="plus" href="#add"></a>
+                                    </div>
+
+                                </div>
+                                <div class="merged-buttons">
+                                    <button class="btn-add-to-cart le-btn btn-iconic detay-ekle-sepet" data-id="@item.Product.ProductId">SEPETE EKLE</button>
+                                </div>
+                            </div>
+
+
+                            <div class="social-row">
+                                <span class="st_facebook_hcount"></span>
+                                <span class="st_twitter_hcount"></span>
+                                <span class="st_pinterest_hcount"></span>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <section class="section-review-comment">
+                    <div class="tabbable tabs-left">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4 no-margin">
+                                <ul class="nav nav-tabs ">
+
+                                    <li class="active"><a href="#editor-review" data-toggle="tab">Ürün Açıklama</a></li>
+                                    <li><a href="#return" data-toggle="tab">Taksit Seçenekleri</a></li>
+                                    <li><a href="#description" data-toggle="tab">Yorumlar</a></li>
+
+                                </ul>
+                            </div>
+                            <div class="col-xs-12 col-sm-8 no-margin ">
+                                <!-- Tab panes -->
+                                <div class="tab-content ">
+
+                                    <div class="tab-pane active " id="editor-review">
+
+
+                                        <h3 class="inline">@item.Product.ProductName</h3>
+                                        <div class="star-holder pull-right">
+                                            <div class="star" data-score="2"></div>
+                                        </div>
+
+                                        <hr>
+
+                                        @item.Product.ProductDescription
+
+
+                                    </div>
+
+
+                                    <div class="tab-pane " id="return">
+
+
+                                        <h3>Taksit Seçenekleri</h3>
+                                        <hr>
+                                        <p>
+                                            Taksit seçenekleri çekilecek
+                                        </p>
+
+
+                                    </div>
+
+                                    <div class="tab-pane" id="description">
+
+                                        <h3>YORUMLAR (0)</h3>
+                                        <hr>
+                                        <p>
+                                            Ürüne ait yorum kaydı bulunamadı!
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </section>
+
+                                        }

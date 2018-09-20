@@ -1,0 +1,90 @@
+﻿@model _00_DataAccessLayer.ViewModel.SendMailModel
+@{
+    ViewBag.Title = "İletişim";
+    Layout = "~/Views/Shared/_userLayoutPage.cshtml";
+}
+
+
+<section id="breadcrumb">
+
+    <div class="container">
+        <div class="le-breadcrumb inline">
+            <div class="iconic-nav-bar">
+                <div class="icon-holder">
+                    <i class="fa fa-chain"></i>
+                    <span class="triangle"></span>
+                </div>
+                <div class="bar">
+                    <ul>
+                        <li><a href="@Url.Action("Index", "Home", new { id = UrlParameter.Optional })">Anasayfa</a></li>
+                        <li class="active">İletişim</li>
+                    </ul>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="checkout" class="page-holder ">
+    <div class="container no-padding">
+
+        <div class="col-xs-12 col-md-12">
+
+
+            <div class="box-holder">
+                <div class="row">
+                    <div class="col-xs-12 col-md-4">
+                        @{Html.RenderAction("ContactAddressPartial", "Contact"); }
+                        <span style="font-size:xx-large">Bize Ulaşın</span><br />
+                        @using (Html.BeginForm())
+                        {
+                            <div class="table-form ">
+
+                                <div class="field-group">
+                                    <label>Adınız ve Soyadınız</label>
+                                    @Html.EditorFor(model => model.NameSurname, new { htmlAttributes = new { @class = "le-input" } })
+                                    <div style="color:#d32f2f">
+                                        @Html.ValidationMessageFor(model => model.NameSurname)
+                                    </div>
+                                </div>
+                                <div class="field-group">
+                                    <label>E-Posta Adresiniz</label>
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "le-input" } })
+                                    <div style="color:#d32f2f">
+                                      @Html.ValidationMessageFor(model => model.Email)
+                                    </div>
+                                </div>
+                                <div class="field-group">
+                                    <label>Mesajınız</label>
+                                    @Html.TextAreaFor(model => model.Message,new { @rows = "5", @cols = "30" } )
+                                    <div style="color:#d32f2f">
+                                      @Html.ValidationMessageFor(model => model.Message)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-right button-holder">
+                                <input type="submit" class="btn le-btn btn-iconic form-control" value="Gönder" />
+                            </div>
+                            <br />
+                        }
+
+                    </div>
+
+                    <div class="col-xs-12 col-md-8">
+                        @{Html.RenderAction("ContactMapPartial", "Contact"); }
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</section>

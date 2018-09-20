@@ -1,0 +1,51 @@
+﻿@model _00_DataAccessLayer.Entity.Customer
+
+
+    <style type="text/css">
+    .login {
+        cursor: pointer;
+    }
+
+    .hesabim li {
+    }
+
+        .hesabim li a {
+        }
+
+    ul.hesabim {
+        display: none;
+        position: absolute;
+    }
+</style>
+  
+
+@if (Session["CustomerId"] != null && Convert.ToInt32(Session["CustomerId"])!=0)
+{
+     <li><a href="#">Hoşgeldin @Model.CustomerName</a></li>
+    <li class="login"> Hesabım
+        <ul class="hesabim">
+            <li><a href="@Url.Action("Index", "Order", new { id = UrlParameter.Optional })"> Sipariş Takibi</a></li>
+            <li><a href="@Url.Action("ChangePassword", "Customer", new { id = UrlParameter.Optional })"> Şifremi Değiştir</a></li>
+            <li><a href="@Url.Action("Edit", "Customer", new { id = UrlParameter.Optional })"> Ayarlar</a></li>
+            <li><a href="@Url.Action("Logout", "Customer", new { id = UrlParameter.Optional })"> Güvenli Çıkış</a></li>
+         </ul>
+      </li>
+
+}
+else
+{
+    <li><a href="@Url.Action("Login", "Customer", new { id = UrlParameter.Optional })">Üye Girişi</a></li>
+    <li><a href="@Url.Action("GetPassword", "Customer", new { id = UrlParameter.Optional })">Şifre Al</a></li>
+    <li><a href="@Url.Action("Create", "Customer")">Yeni Üye</a></li>
+}
+
+<script type="text/javascript">
+        $(function () {
+            $(".login").hover(function () {
+                $(".hesabim").slideDown("50")
+            }, function () {
+                $(".hesabim").stop().slideUp("slow")
+            });
+
+        });
+</script>
